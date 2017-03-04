@@ -685,25 +685,25 @@ public class OutptData {
 	/** 現法名２_日本用 */
 	private String custName_2Jp;
 	/** 梱包指示１_日本用 */
-	private String ntvPackingInstruct1Jp;
+	private String ntvPackingInstruct1J;
 	/** 梱包指示２_日本用 */
-	private String ntvPackingInstruct2Jp;
+	private String ntvPackingInstruct2J;
 	/** 梱包指示３_日本用 */
-	private String ntvPackingInstruct3Jp;
+	private String ntvPackingInstruct3J;
 	/** 梱包指示４_日本用 */
-	private String ntvPackingInstruct4Jp;
+	private String ntvPackingInstruct4J;
 	/** 梱包指示５_日本用 */
-	private String ntvPackingInstruct5Jp;
+	private String ntvPackingInstruct5J;
 	/** 事務指示１_日本用 */
-	private String ntvBusinessInstruct1Jp;
+	private String ntvBusinessInstruct1J;
 	/** 事務指示２_日本用 */
-	private String ntvBusinessInstruct2Jp;
+	private String ntvBusinessInstruct2J;
 	/** 事務指示３_日本用 */
-	private String ntvBusinessInstruct3Jp;
+	private String ntvBusinessInstruct3J;
 	/** 事務指示４_日本用 */
-	private String ntvBusinessInstruct4Jp;
+	private String ntvBusinessInstruct4J;
 	/** 事務指示５_日本用 */
-	private String ntvBusinessInstruct5Jp;
+	private String ntvBusinessInstruct5J;
 	/** 直送先担当者（カナ）_日本用 */
 	private String shipToAttentionKanaJp;
 	/** 直送先部課（カナ）_日本用 */
@@ -733,7 +733,7 @@ public class OutptData {
 	/** ストーク料金適用区分_日本用 */
 	private String storkChargeApplyDivJp;
 	/** 納品書番号_MJP_日本用 */
-	private String deliNoteNoJp;
+	private String deliNoteNoMjp;
 	/** 合計金額（日本納品書用）_日本用 */
 	private int sumAmtJp;
 	/** 元J納品書番号_日本用 */
@@ -4134,103 +4134,103 @@ public class OutptData {
 	}
 
 	/** 梱包指示１_日本用 */
-	public String getNtvPackingInstruct1Jp() {
-		return ntvPackingInstruct1Jp;
+	public String getNtvPackingInstruct1J() {
+		return ntvPackingInstruct1J;
 	}
 
 	/** 梱包指示１_日本用 */
-	public void setNtvPackingInstruct1Jp(String ntvPackingInstruct1Jp) {
-		this.ntvPackingInstruct1Jp = ntvPackingInstruct1Jp;
+	public void setNtvPackingInstruct1J(String ntvPackingInstruct1J) {
+		this.ntvPackingInstruct1J = ntvPackingInstruct1J;
 	}
 
 	/** 梱包指示２_日本用 */
-	public String getNtvPackingInstruct2Jp() {
-		return ntvPackingInstruct2Jp;
+	public String getNtvPackingInstruct2J() {
+		return ntvPackingInstruct2J;
 	}
 
 	/** 梱包指示２_日本用 */
-	public void setNtvPackingInstruct2Jp(String ntvPackingInstruct2Jp) {
-		this.ntvPackingInstruct2Jp = ntvPackingInstruct2Jp;
+	public void setNtvPackingInstruct2J(String ntvPackingInstruct2J) {
+		this.ntvPackingInstruct2J = ntvPackingInstruct2J;
 	}
 
 	/** 梱包指示３_日本用 */
-	public String getNtvPackingInstruct3Jp() {
-		return ntvPackingInstruct3Jp;
+	public String getNtvPackingInstruct3J() {
+		return ntvPackingInstruct3J;
 	}
 
 	/** 梱包指示３_日本用 */
-	public void setNtvPackingInstruct3Jp(String ntvPackingInstruct3Jp) {
-		this.ntvPackingInstruct3Jp = ntvPackingInstruct3Jp;
+	public void setNtvPackingInstruct3J(String ntvPackingInstruct3J) {
+		this.ntvPackingInstruct3J = ntvPackingInstruct3J;
 	}
 
 	/** 梱包指示４_日本用 */
-	public String getNtvPackingInstruct4Jp() {
-		return ntvPackingInstruct4Jp;
+	public String getNtvPackingInstruct4J() {
+		return ntvPackingInstruct4J;
 	}
 
 	/** 梱包指示４_日本用 */
-	public void setNtvPackingInstruct4Jp(String ntvPackingInstruct4Jp) {
-		this.ntvPackingInstruct4Jp = ntvPackingInstruct4Jp;
+	public void setNtvPackingInstruct4J(String ntvPackingInstruct4J) {
+		this.ntvPackingInstruct4J = ntvPackingInstruct4J;
 	}
 
 	/** 梱包指示５_日本用 */
-	public String getNtvPackingInstruct5Jp() {
-		return ntvPackingInstruct5Jp;
+	public String getNtvPackingInstruct5J() {
+		return ntvPackingInstruct5J;
 	}
 
 	/** 梱包指示５_日本用 */
-	public void setNtvPackingInstruct5Jp(String ntvPackingInstruct5Jp) {
-		this.ntvPackingInstruct5Jp = ntvPackingInstruct5Jp;
+	public void setNtvPackingInstruct5J(String ntvPackingInstruct5J) {
+		this.ntvPackingInstruct5J = ntvPackingInstruct5J;
 	}
 
 	/** 事務指示１_日本用 */
-	public String getNtvBusinessInstruct1Jp() {
-		return ntvBusinessInstruct1Jp;
+	public String getNtvBusinessInstruct1J() {
+		return ntvBusinessInstruct1J;
 	}
 
 	/** 事務指示１_日本用 */
-	public void setNtvBusinessInstruct1Jp(String ntvBusinessInstruct1Jp) {
-		this.ntvBusinessInstruct1Jp = ntvBusinessInstruct1Jp;
+	public void setNtvBusinessInstruct1J(String ntvBusinessInstruct1J) {
+		this.ntvBusinessInstruct1J = ntvBusinessInstruct1J;
 	}
 
 	/** 事務指示２_日本用 */
-	public String getNtvBusinessInstruct2Jp() {
-		return ntvBusinessInstruct2Jp;
+	public String getNtvBusinessInstruct2J() {
+		return ntvBusinessInstruct2J;
 	}
 
 	/** 事務指示２_日本用 */
-	public void setNtvBusinessInstruct2Jp(String ntvBusinessInstruct2Jp) {
-		this.ntvBusinessInstruct2Jp = ntvBusinessInstruct2Jp;
+	public void setNtvBusinessInstruct2J(String ntvBusinessInstruct2J) {
+		this.ntvBusinessInstruct2J = ntvBusinessInstruct2J;
 	}
 
 	/** 事務指示３_日本用 */
-	public String getNtvBusinessInstruct3Jp() {
-		return ntvBusinessInstruct3Jp;
+	public String getNtvBusinessInstruct3J() {
+		return ntvBusinessInstruct3J;
 	}
 
 	/** 事務指示３_日本用 */
-	public void setNtvBusinessInstruct3Jp(String ntvBusinessInstruct3Jp) {
-		this.ntvBusinessInstruct3Jp = ntvBusinessInstruct3Jp;
+	public void setNtvBusinessInstruct3J(String ntvBusinessInstruct3J) {
+		this.ntvBusinessInstruct3J = ntvBusinessInstruct3J;
 	}
 
 	/** 事務指示４_日本用 */
-	public String getNtvBusinessInstruct4Jp() {
-		return ntvBusinessInstruct4Jp;
+	public String getNtvBusinessInstruct4J() {
+		return ntvBusinessInstruct4J;
 	}
 
 	/** 事務指示４_日本用 */
-	public void setNtvBusinessInstruct4Jp(String ntvBusinessInstruct4Jp) {
-		this.ntvBusinessInstruct4Jp = ntvBusinessInstruct4Jp;
+	public void setNtvBusinessInstruct4J(String ntvBusinessInstruct4J) {
+		this.ntvBusinessInstruct4J = ntvBusinessInstruct4J;
 	}
 
 	/** 事務指示５_日本用 */
-	public String getNtvBusinessInstruct5Jp() {
-		return ntvBusinessInstruct5Jp;
+	public String getNtvBusinessInstruct5J() {
+		return ntvBusinessInstruct5J;
 	}
 
 	/** 事務指示５_日本用 */
-	public void setNtvBusinessInstruct5Jp(String ntvBusinessInstruct5Jp) {
-		this.ntvBusinessInstruct5Jp = ntvBusinessInstruct5Jp;
+	public void setNtvBusinessInstruct5J(String ntvBusinessInstruct5J) {
+		this.ntvBusinessInstruct5J = ntvBusinessInstruct5J;
 	}
 
 	/** 直送先担当者（カナ）_日本用 */
@@ -4374,13 +4374,13 @@ public class OutptData {
 	}
 
 	/** 納品書番号_MJP_日本用 */
-	public String getDeliNoteNoJp() {
-		return deliNoteNoJp;
+	public String getDeliNoteNoMjp() {
+		return deliNoteNoMjp;
 	}
 
 	/** 納品書番号_MJP_日本用 */
-	public void setDeliNoteNoJp(String deliNoteNoJp) {
-		this.deliNoteNoJp = deliNoteNoJp;
+	public void setDeliNoteNoMjp(String deliNoteNoMjp) {
+		this.deliNoteNoMjp = deliNoteNoMjp;
 	}
 
 	/** 合計金額（日本納品書用）_日本用 */
