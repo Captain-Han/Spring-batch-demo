@@ -10,6 +10,8 @@ public class InptData {
 	private String cometSeq;
 	/** オンデマンド用出荷テーブル.データ区分 */
 	private String dataDiv;
+	/** オンデマンド用出荷テーブル.納入部課コード */
+	private String deliDeptCd;
 	/** オンデマンド用出荷テーブル.総重量 */
 	private int totalWeight;
 	/** オンデマンド用出荷テーブル.数量合計 */
@@ -166,8 +168,6 @@ public class InptData {
 	private String specifyVoucherDiv;
 	/** 受注明細.現品添付票区分 */
 	private String moveTicketDiv;
-	/** 受注明細.納入部課コード */
-	private String deliDeptCd;
 	/** 受注明細.納入担当者コード */
 	private String deliAttentionCd;
 	/** 受注明細.納入者部課（現地語） */
@@ -198,7 +198,7 @@ public class InptData {
 	private String custsubShipToCd;
 	/** 受注明細.得意先カテゴリコード */
 	private String custCategoryCd;
-	/** 受注明細.得受注伝票番号 */
+	/** 受注明細.受注伝票番号 */
 	private String sovoucherno;
 	/** 受注明細.受注日 */
 	private Date soDate;
@@ -566,6 +566,10 @@ public class InptData {
 	private String plantDeptTel;
 	/** 輸出管理マスタ.受注メッセージコード */
 	private String orderMsgCd;
+	/** GEIP受注ヘッダ.ロジ連携用伝票コメント */
+	private String hdCommentForLogistics;
+	/** GEIP受注明細.明細コメント */
+	private String dtComment;
 
 	public InptData() {
 
@@ -589,6 +593,16 @@ public class InptData {
 	/** オンデマンド用出荷テーブル.データ区分 */
 	public void setDataDiv(String dataDiv) {
 		this.dataDiv = dataDiv;
+	}
+
+	/** オンデマンド用出荷テーブル.納入部課コード */
+	public String getDeliDeptCd() {
+		return deliDeptCd;
+	}
+
+	/** オンデマンド用出荷テーブル.納入部課コード */
+	public void setDeliDeptCd(String deliDeptCd) {
+		this.deliDeptCd = deliDeptCd;
 	}
 
 	/** オンデマンド用出荷テーブル.総重量 */
@@ -1371,16 +1385,6 @@ public class InptData {
 		this.moveTicketDiv = moveTicketDiv;
 	}
 
-	/** 受注明細.納入部課コード */
-	public String getDeliDeptCd() {
-		return deliDeptCd;
-	}
-
-	/** 受注明細.納入部課コード */
-	public void setDeliDeptCd(String deliDeptCd) {
-		this.deliDeptCd = deliDeptCd;
-	}
-
 	/** 受注明細.納入担当者コード */
 	public String getDeliAttentionCd() {
 		return deliAttentionCd;
@@ -1531,12 +1535,12 @@ public class InptData {
 		this.custCategoryCd = custCategoryCd;
 	}
 
-	/** 受注明細.得受注伝票番号 */
+	/** 受注明細.受注伝票番号 */
 	public String getSovoucherno() {
 		return sovoucherno;
 	}
 
-	/** 受注明細.得受注伝票番号 */
+	/** 受注明細.受注伝票番号 */
 	public void setSovoucherno(String sovoucherno) {
 		this.sovoucherno = sovoucherno;
 	}
@@ -3369,5 +3373,25 @@ public class InptData {
 	/** 輸出管理マスタ.受注メッセージコード */
 	public void setOrderMsgCd(String orderMsgCd) {
 		this.orderMsgCd = orderMsgCd;
+	}
+
+	/** GEIP受注ヘッダ.ロジ連携用伝票コメント */
+	public String getHdCommentForLogistics() {
+		return hdCommentForLogistics;
+	}
+
+	/** GEIP受注ヘッダ.ロジ連携用伝票コメント */
+	public void setHdCommentForLogistics(String hdCommentForLogistics) {
+		this.hdCommentForLogistics = hdCommentForLogistics;
+	}
+
+	/** GEIP受注明細.明細コメント */
+	public String getDtComment() {
+		return dtComment;
+	}
+
+	/** GEIP受注明細.明細コメント */
+	public void setDtComment(String dtComment) {
+		this.dtComment = dtComment;
 	}
 }
