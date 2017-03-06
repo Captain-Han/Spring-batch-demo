@@ -7,27 +7,27 @@ import java.util.Date;
 public class InptData {
 
 	/** オンデマンド用出荷テーブル.COMET紐付けSEQ */
-	private String cometseq;
+	private String cometSeq;
 	/** オンデマンド用出荷テーブル.データ区分 */
-	private String datadiv;
+	private String dataDiv;
 	/** オンデマンド用出荷テーブル.総重量 */
-	private int totalofweight;
+	private int totalWeight;
 	/** オンデマンド用出荷テーブル.数量合計 */
-	private int sumqty;
+	private int totalQty;
 	/** オンデマンド用出荷テーブル.受注金額 */
-	private int soamt;
+	private int soAmount;
 	/** オンデマンド用出荷テーブル.受注金額小計 */
-	private int soamtsum;
+	private int subtotalSoAmount;
 	/** オンデマンド用出荷テーブル.合計税金額 */
-	private int totaltaxamt;
+	private int taxAmount;
 	/** オンデマンド用出荷テーブル.割引費 */
-	private int offamt;
+	private int tenthsDiscountedCost;
 	/** オンデマンド用出荷テーブル.総合計額 */
-	private int totalamt;
+	private int totalAmountPrice;
 	/** オンデマンド用出荷テーブル.納品書番号_MJP */
-	private int delinotenomjp;
+	private int deliNoteNoMjp;
 	/** オンデマンド用出荷テーブル.合計金額（日本納品書用） */
-	private int sumamtjp;
+	private int totalSAmountMjp;
 	/** MC_置場マスタ.ＭＣ／置場名称（現地語） */
 	private String ntvMcPlantName;
 	/** タイプコードマスタ.分析コード */
@@ -124,6 +124,8 @@ public class InptData {
 	private String mcCd;
 	/** 受注明細.得意先コード */
 	private String custCd;
+	/** 得意先現法コード */
+	private String custsubSubsidiaryCd;
 	/** 受注明細.仕入先コード */
 	private String supplierCd;
 	/** 受注明細.置場区分 */
@@ -570,113 +572,113 @@ public class InptData {
 	}
 
 	/** オンデマンド用出荷テーブル.COMET紐付けSEQ */
-	public String getCometseq() {
-		return cometseq;
+	public String getCometSeq() {
+		return cometSeq;
 	}
 
 	/** オンデマンド用出荷テーブル.COMET紐付けSEQ */
-	public void setCometseq(String cometseq) {
-		this.cometseq = cometseq;
+	public void setCometSeq(String cometSeq) {
+		this.cometSeq = cometSeq;
 	}
 
 	/** オンデマンド用出荷テーブル.データ区分 */
-	public String getDatadiv() {
-		return datadiv;
+	public String getDataDiv() {
+		return dataDiv;
 	}
 
 	/** オンデマンド用出荷テーブル.データ区分 */
-	public void setDatadiv(String datadiv) {
-		this.datadiv = datadiv;
+	public void setDataDiv(String dataDiv) {
+		this.dataDiv = dataDiv;
 	}
 
 	/** オンデマンド用出荷テーブル.総重量 */
-	public int getTotalofweight() {
-		return totalofweight;
+	public int getTotalWeight() {
+		return totalWeight;
 	}
 
 	/** オンデマンド用出荷テーブル.総重量 */
-	public void setTotalofweight(int totalofweight) {
-		this.totalofweight = totalofweight;
+	public void setTotalWeight(int totalWeight) {
+		this.totalWeight = totalWeight;
 	}
 
 	/** オンデマンド用出荷テーブル.数量合計 */
-	public int getSumqty() {
-		return sumqty;
+	public int getTotalQty() {
+		return totalQty;
 	}
 
 	/** オンデマンド用出荷テーブル.数量合計 */
-	public void setSumqty(int sumqty) {
-		this.sumqty = sumqty;
+	public void setTotalQty(int totalQty) {
+		this.totalQty = totalQty;
 	}
 
 	/** オンデマンド用出荷テーブル.受注金額 */
-	public int getSoamt() {
-		return soamt;
+	public int getSoAmount() {
+		return soAmount;
 	}
 
 	/** オンデマンド用出荷テーブル.受注金額 */
-	public void setSoamt(int soamt) {
-		this.soamt = soamt;
+	public void setSoAmount(int soAmount) {
+		this.soAmount = soAmount;
 	}
 
 	/** オンデマンド用出荷テーブル.受注金額小計 */
-	public int getSoamtsum() {
-		return soamtsum;
+	public int getSubtotalSoAmount() {
+		return subtotalSoAmount;
 	}
 
 	/** オンデマンド用出荷テーブル.受注金額小計 */
-	public void setSoamtsum(int soamtsum) {
-		this.soamtsum = soamtsum;
+	public void setSubtotalSoAmount(int subtotalSoAmount) {
+		this.subtotalSoAmount = subtotalSoAmount;
 	}
 
 	/** オンデマンド用出荷テーブル.合計税金額 */
-	public int getTotaltaxamt() {
-		return totaltaxamt;
+	public int getTaxAmount() {
+		return taxAmount;
 	}
 
 	/** オンデマンド用出荷テーブル.合計税金額 */
-	public void setTotaltaxamt(int totaltaxamt) {
-		this.totaltaxamt = totaltaxamt;
+	public void setTaxAmount(int taxAmount) {
+		this.taxAmount = taxAmount;
 	}
 
 	/** オンデマンド用出荷テーブル.割引費 */
-	public int getOffamt() {
-		return offamt;
+	public int getTenthsDiscountedCost() {
+		return tenthsDiscountedCost;
 	}
 
 	/** オンデマンド用出荷テーブル.割引費 */
-	public void setOffamt(int offamt) {
-		this.offamt = offamt;
+	public void setTenthsDiscountedCost(int tenthsDiscountedCost) {
+		this.tenthsDiscountedCost = tenthsDiscountedCost;
 	}
 
 	/** オンデマンド用出荷テーブル.総合計額 */
-	public int getTotalamt() {
-		return totalamt;
+	public int getTotalAmountPrice() {
+		return totalAmountPrice;
 	}
 
 	/** オンデマンド用出荷テーブル.総合計額 */
-	public void setTotalamt(int totalamt) {
-		this.totalamt = totalamt;
+	public void setTotalAmountPrice(int totalAmountPrice) {
+		this.totalAmountPrice = totalAmountPrice;
 	}
 
 	/** オンデマンド用出荷テーブル.納品書番号_MJP */
-	public int getDelinotenomjp() {
-		return delinotenomjp;
+	public int getDeliNoteNoMjp() {
+		return deliNoteNoMjp;
 	}
 
 	/** オンデマンド用出荷テーブル.納品書番号_MJP */
-	public void setDelinotenomjp(int delinotenomjp) {
-		this.delinotenomjp = delinotenomjp;
+	public void setDeliNoteNoMjp(int deliNoteNoMjp) {
+		this.deliNoteNoMjp = deliNoteNoMjp;
 	}
 
 	/** オンデマンド用出荷テーブル.合計金額（日本納品書用） */
-	public int getSumamtjp() {
-		return sumamtjp;
+	public int getTotalSAmountMjp() {
+		return totalSAmountMjp;
 	}
 
 	/** オンデマンド用出荷テーブル.合計金額（日本納品書用） */
-	public void setSumamtjp(int sumamtjp) {
-		this.sumamtjp = sumamtjp;
+	public void setTotalSAmountMjp(int totalSAmountMjp) {
+		this.totalSAmountMjp = totalSAmountMjp;
 	}
 
 	/** MC_置場マスタ.ＭＣ／置場名称（現地語） */
@@ -1157,6 +1159,16 @@ public class InptData {
 	/** 受注明細.得意先コード */
 	public void setCustCd(String custCd) {
 		this.custCd = custCd;
+	}
+
+	/** 得意先現法コード */
+	public String getCustsubSubsidiaryCd() {
+		return custsubSubsidiaryCd;
+	}
+
+	/** 得意先現法コード */
+	public void setCustsubSubsidiaryCd(String custsubSubsidiaryCd) {
+		this.custsubSubsidiaryCd = custsubSubsidiaryCd;
 	}
 
 	/** 受注明細.仕入先コード */

@@ -10,7 +10,6 @@ import org.springframework.batch.item.ItemProcessor;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import ch.qos.logback.classic.filter.LevelFilter;
 import jp.co.sysevo.model.InptData;
 import jp.co.sysevo.model.OutptData;
 
@@ -57,7 +56,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// グローバル番号
 		result.setGlobalNo(item.getGlobalNo());
 		// COMET紐付けSEQ
-		result.setCometSeq(result.getSchdShipDt().toString() + item.getCometseq());
+		result.setCometSeq(result.getSchdShipDt().toString() + item.getCometSeq());
 		// 商品コード
 		result.setProductCd(item.getProductCd());
 		// インナーコード
@@ -91,7 +90,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 在庫区分
 		result.setStkDiv(item.getMcPlantDiv());
 		// データ区分
-		result.setDataDiv(item.getDatadiv());
+		result.setDataDiv(item.getDataDiv());
 		// 納区
 		result.setDeliDiv(item.getDeliDiv());
 		// 子商品SEQ
@@ -429,25 +428,25 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 仕入通貨単位
 		result.setpUnitPriceCcyCd(item.getpUnitPriceCcyCd());
 		// 総重量
-		result.setTotalOfWeight(item.getTotalofweight());
+		result.setTotalOfWeight(item.getTotalWeight());
 		// 数量合計
-		result.setSumQty(item.getSumqty());
+		result.setSumQty(item.getTotalQty());
 		// 受注金額
-		result.setSoAmt(item.getSoamt());
+		result.setSoAmt(item.getSoAmount());
 		// 税込み売単価
 		result.setInTaxSPrice(item.getIncludeTaxSUPrice());
 		// 受注金額小計
-		result.setSoAmtSum(item.getSoamtsum());
+		result.setSoAmtSum(item.getSubtotalSoAmount());
 		// 合計税金額
-		result.setTotalTaxAmt(item.getTotaltaxamt());
+		result.setTotalTaxAmt(item.getTaxAmount());
 		// 割引費
-		result.setOffAmt(item.getOffamt());
+		result.setOffAmt(item.getTenthsDiscountedCost());
 		// その他値引額
 		result.setOtherDsctAmount(item.getOtherDsctAmount());
 		// 運賃値引フラグ
 		result.setFrtDiscountFlg(item.getFrtDiscountFlg());
 		// 総合計額
-		result.setTotalAmt(item.getTotalamt());
+		result.setTotalAmt(item.getTotalAmountPrice());
 		// オリジナルINVOICENO
 		result.setOriginalInvoiceNo(rightPadBlack("", 8));
 		// ジャーナル日付result.setJournalDt(rightPadBlack("", 8));
@@ -788,9 +787,9 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// ストーク料金適用区分_日本用
 		result.setStorkChargeApplyDivJp(item.getStorkChargeApplyDiv());
 		// 納品書番号_MJP_日本用
-		result.setDeliNoteNoMjp(String.valueOf(item.getDelinotenomjp()));
+		result.setDeliNoteNoMjp(String.valueOf(item.getDeliNoteNoMjp()));
 		// 合計金額（日本納品書用）_日本用
-		result.setSumAmtJp(item.getSumamtjp());
+		result.setSumAmtJp(item.getTotalSAmountMjp());
 		// 元J納品書番号_日本用
 		result.setOldDeliNoteNoJp(item.getOriginalDeliNoteNo());
 
