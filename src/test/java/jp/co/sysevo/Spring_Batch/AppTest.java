@@ -15,19 +15,24 @@ public class AppTest extends TestCase {
 	 */
 	public AppTest(String testName) {
 		super(testName);
-	}
+    }
 
 	/**
 	 * @return the suite of tests being tested
 	 */
 	public static Test suite() {
-		return new TestSuite(AppTest.class);
+		TestSuite suite = new TestSuite("Running all tests.");
+		suite.addTestSuite(AppTest.class);
+		suite.addTestSuite(OutputProcessorTest.class);
+		return suite;
 	}
 
 	/**
 	 * Rigourous Test :-)
 	 */
 	public void testApp() {
-		assertTrue(true);
+
+		System.out.println("<------test begin-------->");
+
 	}
 }
