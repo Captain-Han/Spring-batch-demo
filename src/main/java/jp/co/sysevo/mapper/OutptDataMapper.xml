@@ -5,16 +5,6 @@
 
 <mapper namespace="jp.co.sysevo.mapper.OutptDataMapper">
 
-	<!-- 
-	<update id="updateTable" parameterType="jp.co.sysevo.model.ResultList">
-		update customers set 
-		<foreach item="item" index="index" collection="list" separator=";">
-			send_flg = #{item.sendFlg},
-			upd_ts = #{item.updTs}
-			where id = #{item.id}
-		</foreach>
-	</update>
-	-->
 	<update id="updateTable" parameterType="jp.co.sysevo.model.OutptData">
 		update customers
 		set send_flg = #{sendFlg},
