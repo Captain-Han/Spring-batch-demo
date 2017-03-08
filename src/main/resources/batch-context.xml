@@ -3,6 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-sftp="http://www.springframework.org/schema/integration/sftp"
+	xmlns:int-ftp="http://www.springframework.org/schema/integration/ftp"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -12,6 +15,14 @@
 		http://www.springframework.org/schema/batch/spring-batch.xsd
 		http://www.springframework.org/schema/jdbc
 		http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/integration
+		http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/file
+		http://www.springframework.org/schema/integration/file/spring-integration-file-4.3.xsd
+		http://www.springframework.org/schema/integration/sftp
+		http://www.springframework.org/schema/integration/sftp/spring-integration-sftp-4.3.xsd
+		http://www.springframework.org/schema/integration/ftp
+		http://www.springframework.org/schema/integration/ftp/spring-integration-ftp-4.3.xsd
 	">
 
 	<!-- componentパッケージの設定 -->
@@ -37,7 +48,7 @@
 	</bean>
 
 	<!-- JDBCの設定ファイルのロード -->
-	<context:property-placeholder location="classpath:/META-INF/jdbc.properties" />
+	<context:property-placeholder location="classpath:/META-INF/conf.properties" />
 
 	<!-- DataSource -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -46,6 +57,38 @@
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 	</bean>
+	<!-- Spring integration -->
+	<bean id="sftpSessionFactory" class="org.springframework.integration.sftp.session.DefaultSftpSessionFactory">
+		<property name="host" value="${ftp.host}" />
+		<property name="port" value="${ftp.port}" />
+		<property name="user" value="${ftp.username}" />
+		<property name="password" value="${ftp.password}" />
+		<property name="timeout" value="6000" />
+	</bean>
+
+	<bean id="ftpSessionFactory"
+		class="org.springframework.integration.ftp.session.DefaultFtpSessionFactory">
+		<property name="host" value="${ftp.host}" />
+		<property name="port" value="${ftp.port}" />
+		<property name="username" value="${ftp.username}" />
+		<property name="password" value="${ftp.password}" />
+		<property name="clientMode" value="0" />
+		
+	</bean>
+
+	<int-sftp:outbound-channel-adapter id="sftpOutboundAdapter"
+		session-factory="sftpSessionFactory" channel="outputChannel" charset="UTF-8"
+		remote-directory="/target" remote-filename-generator="fileNameGenerator" />
+
+	<int-ftp:outbound-channel-adapter id="ftpOutbound"
+		channel="outputChannel" session-factory="ftpSessionFactory" charset="UTF-8"
+		remote-file-separator="/" auto-create-directory="true"
+		remote-directory="/target"
+		mode="REPLACE" />
+
+	<int:channel id="outputChannel" />
+
+	<bean id="fileNameGenerator" class="org.springframework.integration.file.DefaultFileNameGenerator" />
 
 	<!-- Mybatis -->
 	<!-- MapperScannerConfigurer-->

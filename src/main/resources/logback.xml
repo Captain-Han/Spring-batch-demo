@@ -24,10 +24,10 @@
 		</encoder>
 	</appender>
 
-	<logger name="jp.co.sysevo" level="INFO">
+	<logger name="jp.co.sysevo" level="TRACE">
 		<appender-ref ref="FILE" />
 	</logger>
-	<logger name="org.springframework" level="INFO">
+	<logger name="org.springframework" level="TRACE">
 		<appender-ref ref="STDOUT" />
 	</logger>
 
