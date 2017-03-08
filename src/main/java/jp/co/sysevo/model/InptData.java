@@ -375,7 +375,7 @@ public class InptData {
 	/** 得意先マスタ.住所４（カナ／英字） */
 	private String custHalfwidthAddress_4;
 	/** 得意先マスタ.国コード */
-	private String custCountryCd;
+	private String custCountryCdMst;
 	/** 得意先マスタ.都市名 */
 	private String custCityName;
 	/** 得意先マスタ.市町村コード */
@@ -570,6 +570,24 @@ public class InptData {
 	private String hdCommentForLogistics;
 	/** GEIP受注明細.明細コメント */
 	private String dtComment;
+	/** 部材品受注内訳ファイル.削除フラグ */
+	private String delFlg;
+	/** オンデマンド用出荷テーブル.1得意先で複数配送先有無マーク*/
+	private String w1DeliAttentionCd;
+	/** オンデマンド用出荷テーブル.個口数SEQ */
+	private String boxNumberSeq;
+	/** オンデマンド用出荷テーブル.届先件数 */
+	private String shippingNumber;
+	/** 現法マスタ（得意先現法）.現法システム区分 */
+	private String delFlsubsidiarySysDivg;
+	/** 得意先マスタ（得意先現法得意先_MJP）.得意先名（英字）*/
+	private String customerMjpCustName;
+	/** 着日指示データ.現法コード  */
+	private String subsidiaryCdArrDt;
+	/** 得意先マスタ.郵便番号 */
+	private String custPostalCd;
+	/** 受注明細．得意先国コード */
+	private String custCountryCd;
 
 	public InptData() {
 
@@ -2416,13 +2434,13 @@ public class InptData {
 	}
 
 	/** 得意先マスタ.国コード */
-	public String getCustCountryCd() {
-		return custCountryCd;
+	public String getCustCountryCdMst() {
+		return custCountryCdMst;
 	}
 
 	/** 得意先マスタ.国コード */
-	public void setCustCountryCd(String custCountryCd) {
-		this.custCountryCd = custCountryCd;
+	public void setCustCountryCdMst(String custCountryCdMst) {
+		this.custCountryCdMst = custCountryCdMst;
 	}
 
 	/** 得意先マスタ.都市名 */
@@ -3393,5 +3411,95 @@ public class InptData {
 	/** GEIP受注明細.明細コメント */
 	public void setDtComment(String dtComment) {
 		this.dtComment = dtComment;
+	}
+
+	/** 部材品受注内訳ファイル.削除フラグ */
+	public String getDelFlg() {
+		return delFlg;
+	}
+
+	/** 部材品受注内訳ファイル.削除フラグ */
+	public void setDelFlg(String delFlg) {
+		this.delFlg = delFlg;
+	}
+
+	/** オンデマンド用出荷テーブル.1得意先で複数配送先有無マーク*/
+	public String getW1DeliAttentionCd() {
+		return w1DeliAttentionCd;
+	}
+
+	/** オンデマンド用出荷テーブル.1得意先で複数配送先有無マーク*/
+	public void setW1DeliAttentionCd(String w1DeliAttentionCd) {
+		this.w1DeliAttentionCd = w1DeliAttentionCd;
+	}
+
+	/** オンデマンド用出荷テーブル.個口数SEQ */
+	public String getBoxNumberSeq() {
+		return boxNumberSeq;
+	}
+
+	/** オンデマンド用出荷テーブル.個口数SEQ */
+	public void setBoxNumberSeq(String boxNumberSeq) {
+		this.boxNumberSeq = boxNumberSeq;
+	}
+
+	/** オンデマンド用出荷テーブル.届先件数 */
+	public String getShippingNumber() {
+		return shippingNumber;
+	}
+
+	/** オンデマンド用出荷テーブル.届先件数 */
+	public void setShippingNumber(String shippingNumber) {
+		this.shippingNumber = shippingNumber;
+	}
+
+	/** 現法マスタ（得意先現法）.現法システム区分 */
+	public String getDelFlsubsidiarySysDivg() {
+		return delFlsubsidiarySysDivg;
+	}
+
+	/** 現法マスタ（得意先現法）.現法システム区分 */
+	public void setDelFlsubsidiarySysDivg(String delFlsubsidiarySysDivg) {
+		this.delFlsubsidiarySysDivg = delFlsubsidiarySysDivg;
+	}
+
+	/** 得意先マスタ（得意先現法得意先_MJP）.得意先名（英字）*/
+	public String getCustomerMjpCustName() {
+		return customerMjpCustName;
+	}
+
+	/** 得意先マスタ（得意先現法得意先_MJP）.得意先名（英字）*/
+	public void setCustomerMjpCustName(String customerMjpCustName) {
+		this.customerMjpCustName = customerMjpCustName;
+	}
+
+	/** 着日指示データ.現法コード  */
+	public String getSubsidiaryCdArrDt() {
+		return subsidiaryCdArrDt;
+	}
+
+	/** 着日指示データ.現法コード  */
+	public void setSubsidiaryCdArrDt(String subsidiaryCdArrDt) {
+		this.subsidiaryCdArrDt = subsidiaryCdArrDt;
+	}
+
+	/** 得意先マスタ.郵便番号 */
+	public String getCustPostalCd() {
+		return custPostalCd;
+	}
+
+	/** 得意先マスタ.郵便番号 */
+	public void setCustPostalCd(String custPostalCd) {
+		this.custPostalCd = custPostalCd;
+	}
+
+	/** 受注明細．得意先国コード */
+	public String getCustCountryCd() {
+		return custCountryCd;
+	}
+
+	/** 受注明細．得意先国コード */
+	public void setCustCountryCd(String custCountryCd) {
+		this.custCountryCd = custCountryCd;
 	}
 }

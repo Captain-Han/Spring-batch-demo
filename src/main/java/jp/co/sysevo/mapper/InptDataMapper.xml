@@ -190,7 +190,7 @@
         <result property="custHalfwidthAddress_3" column="CUST_HALFWIDTH_ADDRESS_3" />
         <result property="custNtvAddress_4" column="CUST_NTV_ADDRESS_4" />
         <result property="custHalfwidthAddress_4" column="CUST_HALFWIDTH_ADDRESS_4" />
-        <result property="custCountryCd" column="CUST_COUNTRY_CD" />
+        <result property="custCountryCdMst" column="CUST_COUNTRY_CD_MST" />
         <result property="custCityName" column="CUST_CITY_NAME" />
         <result property="custCityCd" column="CUST_CITY_CD" />
         <result property="custTel" column="CUST_TEL" />
