@@ -424,9 +424,9 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 寸法単位
 		result.setUnitOfMeasure(item.getUnitOfMeasure());
 		// 売通貨単位
-		result.setsUnitPriceCcyCd(item.getsUnitPriceCcyCd());
+		result.setSUnitPriceCcyCd(item.getsUnitPriceCcyCd());
 		// 仕入通貨単位
-		result.setpUnitPriceCcyCd(item.getpUnitPriceCcyCd());
+		result.setPUnitPriceCcyCd(item.getpUnitPriceCcyCd());
 		// 総重量
 		result.setTotalOfWeight(item.getTotalWeight());
 		// 数量合計
@@ -528,7 +528,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 第２教育目的税額
 		result.setEdu2TaxAmt(0);
 		// 特別追加関税額
-		result.setsAddTaxAmt(0);
+		result.setSAddTaxAmt(0);
 		// 売金額（相殺関税込み）
 		result.setInTaxAmt(0);
 		// 売金額（相殺関税抜き）合計

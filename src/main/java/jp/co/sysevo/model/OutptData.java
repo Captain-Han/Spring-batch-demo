@@ -2554,22 +2554,22 @@ public class OutptData {
 	}
 
 	/** 売通貨単位 */
-	public String getsUnitPriceCcyCd() {
+	public String getSUnitPriceCcyCd() {
 		return sUnitPriceCcyCd;
 	}
 
 	/** 売通貨単位 */
-	public void setsUnitPriceCcyCd(String sUnitPriceCcyCd) {
+	public void setSUnitPriceCcyCd(String sUnitPriceCcyCd) {
 		this.sUnitPriceCcyCd = sUnitPriceCcyCd;
 	}
 
 	/** 仕入通貨単位 */
-	public String getpUnitPriceCcyCd() {
+	public String getPUnitPriceCcyCd() {
 		return pUnitPriceCcyCd;
 	}
 
 	/** 仕入通貨単位 */
-	public void setpUnitPriceCcyCd(String pUnitPriceCcyCd) {
+	public void setPUnitPriceCcyCd(String pUnitPriceCcyCd) {
 		this.pUnitPriceCcyCd = pUnitPriceCcyCd;
 	}
 
@@ -3074,12 +3074,12 @@ public class OutptData {
 	}
 
 	/** 特別追加関税額 */
-	public int getsAddTaxAmt() {
+	public int getSAddTaxAmt() {
 		return sAddTaxAmt;
 	}
 
 	/** 特別追加関税額 */
-	public void setsAddTaxAmt(int sAddTaxAmt) {
+	public void setSAddTaxAmt(int sAddTaxAmt) {
 		this.sAddTaxAmt = sAddTaxAmt;
 	}
 
