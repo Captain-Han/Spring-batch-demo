@@ -2,11 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/batch
 		http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-2.5.xsd
 		">
 
 	<batch:job id="job1">
@@ -50,7 +53,9 @@
 		<property name="resource" value="file:data/RCV_ECAL.TXT" />
 		<property name="lineAggregator">
 			<bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
-				<property name="delimiter" value=',' />
+				<property name="delimiter">
+					<util:constant static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_TAB"/>
+				</property>
 				<property name="fieldExtractor">
 					<bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
 						<property name="names" value="id, name, des, age" />
@@ -64,7 +69,9 @@
 		<property name="resource" value="file:data/RCV_ECAL_MJP.TXT" />
 		<property name="lineAggregator">
 			<bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
-				<property name="delimiter" value=',' />
+				<property name="delimiter">
+					<util:constant static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_TAB"/>
+				</property>
 				<property name="fieldExtractor">
 					<bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
 						<property name="names" value="id, name, sendFlg, desJp" />
