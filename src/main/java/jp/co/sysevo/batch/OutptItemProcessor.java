@@ -56,7 +56,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// グローバル番号
 		result.setGlobalNo(item.getGlobalNo());
 		// COMET紐付けSEQ
-		result.setCometSeq(result.getSchdShipDt().toString() + item.getCometSeq());
+		result.setCometSeq(dateToString(result.getSchdShipDt()) + item.getCometSeq());
 		// 商品コード
 		result.setProductCd(item.getProductCd());
 		// インナーコード
@@ -70,8 +70,8 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 売単価
 		result.setExcludeTaxSUPrice(item.getExcludeTaxSUPrice() * 1000);
 		// 輸出フラグ
-		result.setExportFlg(getExportFlg("受注明細．得意先現法コード", item.getShipToCd(), 
-				item.getCustCountryCd(), item.getDeptCountryCd(), item.getShipToCountryCd()));
+		result.setExportFlg(getExportFlg(item.getSubsidiaryCd(), item.getShipToCd(),
+				item.getCustCountryCdMst(), item.getDeptCountryCd(), item.getShipToCountryCd()));
 		// 仕入先名(現地語)
 		result.setPurcCompanyName(getInforName(result.getExportFlg(), 
 				item.getNtv1CompanyName(), item.getCompanyName()));
@@ -229,7 +229,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 得意先部署名
 		result.setCustDeptName(item.getNtvCustDept());
 		// 得意先郵便番号
-		result.setCustPostalNo(item.getCustName());
+		result.setCustPostalNo(item.getCustPostalCd());
 		// 得意先国コード
 		result.setCustCountryCd(item.getCustCountryCd());
 		// 得意先国コード(UPS)
@@ -312,19 +312,19 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 売掛注釈2
 		result.setNtvReceivableRemarks_2(item.getNtvReceivableRemarks_2());
 		// 直送先名
-		result.setShipToName(getShipToInfor(item.getShipToCd(),result.getExportFlg(), 
-				item.getNtvShipToName1(), item.getShipToName(), "売掛先マスタ.直送先名（英字）"));
+		result.setShipToName(getShipToInfor(item.getShipToCd(), result.getExportFlg(),
+				item.getNtvShipToName1(), item.getShipToName(), item.getBillToName()));
 		// 直送先住所1
-		result.setShipToAddress_1(getShipToInfor(item.getShipToCd(),result.getExportFlg(), 
+		result.setShipToAddress_1(getShipToInfor(item.getShipToCd(), result.getExportFlg(),
 				item.getShipToNtvAddress_1(), item.getShipToHalfwidthAddress_1(), item.getBillToHalfwidthAddress_1()));
 		// 直送先住所2
-		result.setShipToAddress_2(getShipToInfor(item.getShipToCd(),result.getExportFlg(), 
+		result.setShipToAddress_2(getShipToInfor(item.getShipToCd(), result.getExportFlg(),
 				item.getShipToNtvAddress_2(), item.getShipToHalfwidthAddress_2(), item.getBillToHalfwidthAddress_2()));
 		// 直送先住所3
-		result.setShipToAddress_3(getShipToInfor(item.getShipToCd(),result.getExportFlg(), 
+		result.setShipToAddress_3(getShipToInfor(item.getShipToCd(), result.getExportFlg(),
 				item.getShipToNtvAddress_3(), item.getShipToHalfwidthAddress_3(), item.getBillToHalfwidthAddress_3()));
 		// 直送先住所4
-		result.setShipToAddress_4(getShipToInfor(item.getShipToCd(),result.getExportFlg(), 
+		result.setShipToAddress_4(getShipToInfor(item.getShipToCd(), result.getExportFlg(),
 				item.getShipToNtvAddress_4(), item.getShipToHalfwidthAddress_4(), item.getBillToHalfwidthAddress_4()));
 		// 直送先部署名
 		result.setShipToDeptName(item.getNtvDeliDept());
@@ -336,7 +336,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		result.setShipUpsCountryCd(item.getShipToUpsCountryCd());
 		// 直送先国名
 		result.setShipToCountryName(getShipToInfor(item.getShipToCd(), result.getExportFlg(), 
-				item.getShipToNtvCountryName_1(), item.getShipToCountryName() , item.getShipToCountryName()));
+				item.getShipToNtvCountryName_1(), item.getShipToCountryName(), item.getShipToCountryName()));
 		// 直送先都市名
 		result.setShipToCityName(item.getCustCityName());
 		// 直送先電話番号
@@ -598,8 +598,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 注文担当者(漢字)
 		result.setNtvCustAttention(setKanJi(result.getArrUserDivJp(), item.getNtvCustAttention()));
 		// 商品名略称(カナ)
-		//result.setProductNameKana(getInforName(result.getExportFlg(), item.getNtvProductName(), item.getProductName()));
-		result.setProductNameKana(getInforName(result.getExportFlg(), item.getNtvProductName(), "得意先マスタ.商品名（英語）"));
+		result.setProductNameKana(getInforName(result.getExportFlg(), item.getNtvProductName(), item.getProductName()));
 		// 別納区分
 		result.setOtherDeliDiv("");
 		// 消費税率
@@ -801,7 +800,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * 
 	 * 
 	 */
-	private Date getCrtDt() {
+	public Date getCrtDt() {
 
 		Calendar updTs = Calendar.getInstance(TimeZone.getTimeZone("JST"));
 		return updTs.getTime();
@@ -813,7 +812,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param str1,str2
 	 * @return string
 	 */
-	private String getCustRef(String str1,String str2) {
+	public String getCustRef(String str1,String str2) {
 
 		if (str1 == "MJP") {
 			return " ";
@@ -828,7 +827,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param CustRef,CystRefNtv,CustSubRef
 	 * @return string
 	 */
-	private String getRefStr(String custRef, String cystRefNtv, String custSubRef, String yType) {
+	public String getRefStr(String custRef, String cystRefNtv, String custSubRef, String yType) {
 
 		if (!isEmpty(custRef)) {
 			if (!isEmpty(cystRefNtv) && isEmpty(custSubRef)) {
@@ -840,7 +839,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 			if (isEmpty(cystRefNtv) && !isEmpty(custSubRef)) {
 				return custRef + "/" + custSubRef + yType;
 			}
-			return yType;
+			return custRef + yType;
 		}
 		else {
 			if (!isEmpty(cystRefNtv) && isEmpty(custSubRef)) {
@@ -861,7 +860,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param date
 	 * @return currentTime
 	 */
-	private Date getDate(Date date) {
+	public Date getDate(Date date) {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 		String dateString = formatter.format(date);
@@ -876,7 +875,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param countryCd,shipToCountryCd
 	 * @return String
 	 */
-	private String getExportFlg(String custsubSubsidiaryCd, String shipToCd, 
+	public String getExportFlg(String custsubSubsidiaryCd, String shipToCd, 
 			String custCountryCd, String countryCd, String shipToCountryCd) {
 
 		if (!isEmpty(custsubSubsidiaryCd) || (isEmpty(shipToCd) && custCountryCd != countryCd) 
@@ -895,7 +894,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param infor2 
 	 * @return  輸出フラグ 0の場合 infor1設定 ;輸出フラグ 1の場合 infor2設定
 	 */
-	private String getInforName(String flg, String infor1, String infor2){
+	public String getInforName(String flg, String infor1, String infor2){
 
 		if (flg == "0") {
 			if (!infor1.isEmpty()) {
@@ -917,7 +916,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param classifyCdName 製品分類マスタ.分析コード名（前頭３２文字）
 	 * @return classifyName
 	 */
-	private String getClassifyName(String flg, String ntvClassifyCdName, String classifyCdName) {
+	public String getClassifyName(String flg, String ntvClassifyCdName, String classifyCdName) {
 
 		if (flg == "0") {
 			if (!isEmpty(ntvClassifyCdName)) {
@@ -939,7 +938,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param grp 受注明細.グループ
 	 * @return deliDept
 	 */
-	private String getDeliDept(String ntvCustDept, String subsidiaryCd, String grp) {
+	public String getDeliDept(String ntvCustDept, String subsidiaryCd, String grp) {
 		
 		if (subsidiaryCd == "MJP" && grp == "2") {
 			return "";
@@ -956,7 +955,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param frtAreaCd 得意先マスタ.運賃エリアコード
 	 * @return frtAreaCd
 	 */
-	private String getFrtAreaCd(String shipToCd, String shipToFrtAreaCd, String frtAreaCd) {
+	public String getFrtAreaCd(String shipToCd, String shipToFrtAreaCd, String frtAreaCd) {
 		
 		if (!isEmpty(shipToCd)) {
 			return shipToFrtAreaCd;
@@ -973,7 +972,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param result2  戻り値2
 	 * @return objectがブランクの場合　result2を設定；以外の場合　result1を設定；
 	 */
-	private String getInstructions(String object, String result1, String result2) {
+	public String getInstructions(String object, String result1, String result2) {
 		
 		if (!isEmpty(object)) {
 			return result1;
@@ -991,7 +990,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param infor2 
 	 * @return shipToInfor
 	 */
-	private String getShipToInfor(String shipToCd, String flg, String infor1, String infor2, String infor3) {
+	public String getShipToInfor(String shipToCd, String flg, String infor1, String infor2, String infor3) {
 		if (isEmpty(shipToCd)) {
 			return "";
 		}
@@ -1016,7 +1015,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param len 固定桁数
 	 * @return str
 	 */
-	private String rightPadBlack(String str, int len) {
+	public String rightPadBlack(String str, int len) {
 		int lenth = len - str.length();
 		for(int i = 0; i < lenth; i++){
 			str+=" ";
@@ -1030,7 +1029,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 *  
 	 * @return brandNameForProductCd
 	 */
-	private String getMcPlantDivJp(String brandNameForProductCd) {
+	public String getMcPlantDivJp(String brandNameForProductCd) {
 		if (brandNameForProductCd == "ﾐｽﾐ" || brandNameForProductCd== "MISUMI") {
 			return "";
 		}
@@ -1045,15 +1044,23 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param branNmForProductCd ブランドマスタ.商品コード用ブランド名
 	 * @return brandNameForProductCd
 	 */
-	private String getBrandProductCdJp(String productCdMst, String branNmForProductCd) {
-		
-		String str = productCdMst + "(" + branNmForProductCd + ")";
-		if (str.length() > 56) {
-			return productCdMst;
+	public String getBrandProductCdJp(String productCdMst, String branNmForProductCd) {
+
+		String str = "";
+		if (!isEmpty(branNmForProductCd)) {
+			str = productCdMst + "(" + branNmForProductCd + ")";
+			if (str.length() > 56) {
+				return productCdMst;
+			}
+			else {
+				return str;
+			}
 		}
 		else {
+			str = productCdMst;
 			return str;
 		}
+
 	}
 
 	/**
@@ -1064,7 +1071,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param custCountryCd 得意先国コード
 	 * @return EngPackingPrintFlgJp
 	 */
-	private String getEngPackingPrintFlgJp(String flg, String engPackingRetain, String shipTyp, String custCountryCd) {
+	public String getEngPackingPrintFlgJp(String flg, String engPackingRetain, String shipTyp, String custCountryCd) {
 		
 		if (flg == "1" && (shipTyp == "110" || shipTyp == "116") && custCountryCd != "192") {
 			return engPackingRetain;
@@ -1081,7 +1088,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param tmpFlg 得意先マスタ.仮納品書フラグ
 	 * @return tmpPackingPrintFlgJp
 	 */
-	private String getTmpPackingPrintFlgJp(String directShipFlg, String shipToTempVoucherDiv, String tmpFlg) {
+	public String getTmpPackingPrintFlgJp(String directShipFlg, String shipToTempVoucherDiv, String tmpFlg) {
 		
 		if (directShipFlg == "1") {
 			return "0";
@@ -1103,9 +1110,10 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param mcPlantDiv 受注明細.置場区分
 	 * @return labelEarlyObjectDivJp
 	 */
-	private String getLabelEarlyObjectDivJp(String labelEarlyDivJp, String deliDiv, String mcPlantDiv) {
+	public String getLabelEarlyObjectDivJp(String labelEarlyDivJp, String deliDiv, String mcPlantDiv) {
 
-		if (labelEarlyDivJp == "1" && deliDiv.substring(0, 1) =="0" 
+		if (labelEarlyDivJp == "1" && !isEmpty(deliDiv)
+				&& deliDiv.substring(0, 1).equals("0")
 				&& mcPlantDiv == "532") {
 			return "1";
 		}
@@ -1121,7 +1129,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * 
 	 * @return custNameKanaJp
 	 */
-	private String getCustNameKanaJp(String flg, String custName) {
+	public String getCustNameKanaJp(String flg, String custName) {
 
 		if (flg == "1") {
 			return custName;
@@ -1138,13 +1146,18 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * 
 	 * @return custName_2
 	 */
-	private String getCustName_2(String billToCountryName, String custName) {
+	public String getCustName_2(String billToCountryName, String custName) {
 
 		if (!isEmpty(billToCountryName)) {
-			return billToCountryName + "/" + custName;
+			if (!isEmpty(billToCountryName.trim())) {
+				return billToCountryName.trim() + "/" + custName.trim();
+			}
+			else {
+				return custName;
+			}
 		}
 		else {
-			return custName;
+			return "";
 		}
 	}
 
@@ -1157,7 +1170,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param result2  値2
 	 * @return custInfor
 	 */
-	private String getCustInfor(String arrUserDivJp, String shipToCd, String custCd, 
+	public String getCustInfor(String arrUserDivJp, String shipToCd, String custCd, 
 			String result1, String result2) {
 
 		if (arrUserDivJp == "2") {
@@ -1183,7 +1196,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * 
 	 * @return kanaJp
 	 */
-	private String setKanaJp(String arrUserDivJp, String result) {
+	public String setKanaJp(String arrUserDivJp, String result) {
 
 		if (arrUserDivJp == "2") {
 			return result;
@@ -1200,7 +1213,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * 
 	 * @return kanaJp
 	 */
-	private String setKanJi(String arrUserDivJp, String result) {
+	public String setKanJi(String arrUserDivJp, String result) {
 
 		if (arrUserDivJp == "1") {
 			return result;
@@ -1216,7 +1229,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * 
 	 * @return boolean
 	 */
-	private boolean isEmpty(String str) {
+	public boolean isEmpty(String str) {
 
 		if (str == null || str.isEmpty()) {
 			return true;
@@ -1234,7 +1247,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param custRef 親注番
 	 * @return boolean
 	 */
-	private String getCystRefNtv(String suppsubSubsidiaryCd, String headerRef, String engHeaderRef, String custRef) {
+	public String getCystRefNtv(String suppsubSubsidiaryCd, String headerRef, String engHeaderRef, String custRef) {
 		// "MJPの場合、 COALESCE(SH.HEADER_REF, SH.ENG_HEADER_REF, SD.CUST_REF)
 		// 上記以外の場合、 COALESCE(SH.HEADER_REF, SH.ENG_HEADER_REF)"
 		if (suppsubSubsidiaryCd == "MJP") {
@@ -1262,7 +1275,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param 
 	 * @return 受注明細．得意先カテゴリコード01または02の場合、１設定;それ以外０設定
 	 */
-	private String getSuppsubBusinessFlg(String custCategoryCd) {
+	public String getSuppsubBusinessFlg(String custCategoryCd) {
 
 		if (custCategoryCd == "01" || custCategoryCd == "02") {
 			return "1";
@@ -1271,4 +1284,20 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 			return "0";
 		}
 	}
+
+	/**
+	 * DateToString
+	 * @param date
+	 * @param
+	 * @return dateがnullの場合：null;それ以外の場合: date.toString;
+	 */
+	public String  dateToString(Date date) {
+		if (date == null) {
+			return null;
+		}
+		else {
+			return date.toString();
+		}
+	}
+
 }
