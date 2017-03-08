@@ -13,7 +13,7 @@
 		">
 
 	<batch:job id="job1">
-		<batch:step id="fileCreatorStep" next="ftpFileSendStep">
+		<batch:step id="fileCreatorStep" next="sftpFileSendStep">
 			<batch:tasklet>
 				<batch:chunk reader="itemReader" processor="itemProcessor" writer="multiItemWriter"
 								commit-interval="4" skip-limit="2">
@@ -27,8 +27,8 @@
 				</batch:chunk>
 			</batch:tasklet>
 		</batch:step>
-		<batch:step id="ftpFileSendStep">
-			<batch:tasklet ref="ftpJobTasklet" />
+		<batch:step id="sftpFileSendStep">
+			<batch:tasklet ref="sftpJobTasklet" />
 		</batch:step>
 	</batch:job>
 	
@@ -94,8 +94,4 @@
 		<property name="sftpChannel" ref="outputChannel" />
 	</bean>
 
-	<bean id="ftpJobTasklet" class="jp.co.sysevo.batch.FtpTasklet">
-		<property name="fileName" value="data/RCV_ECAL_MJP.TXT" />
-		<property name="ftpChannel" ref="outputChannel" />
-	</bean>
 </beans>
