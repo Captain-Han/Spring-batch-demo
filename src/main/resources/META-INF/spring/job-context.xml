@@ -89,11 +89,6 @@
 		<property name="statementId" value="updateTable"/>
 	</bean>
 
-	<bean id="sftpJobTasklet" class="jp.co.sysevo.batch.SftpTasklet">
-		<property name="fileName" value="data/RCV_ECAL_MJP.TXT" />
-		<property name="sftpChannel" ref="outputChannel" />
-	</bean>
-
 	<bean id="ftpJobTasklet" class="jp.co.sysevo.batch.FtpTasklet">
 		<property name="fileName" value="data/RCV_ECAL_MJP.TXT" />
 		<property name="ftpChannel" ref="outputChannel" />

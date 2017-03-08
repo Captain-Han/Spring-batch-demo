@@ -58,14 +58,6 @@
 		<property name="password" value="${jdbc.password}" />
 	</bean>
 	<!-- Spring integration -->
-	<bean id="sftpSessionFactory" class="org.springframework.integration.sftp.session.DefaultSftpSessionFactory">
-		<property name="host" value="${ftp.host}" />
-		<property name="port" value="${ftp.port}" />
-		<property name="user" value="${ftp.username}" />
-		<property name="password" value="${ftp.password}" />
-		<property name="timeout" value="6000" />
-	</bean>
-
 	<bean id="ftpSessionFactory"
 		class="org.springframework.integration.ftp.session.DefaultFtpSessionFactory">
 		<property name="host" value="${ftp.host}" />
@@ -75,10 +67,6 @@
 		<property name="clientMode" value="0" />
 		
 	</bean>
-
-	<int-sftp:outbound-channel-adapter id="sftpOutboundAdapter"
-		session-factory="sftpSessionFactory" channel="outputChannel" charset="UTF-8"
-		remote-directory="/target" remote-filename-generator="fileNameGenerator" />
 
 	<int-ftp:outbound-channel-adapter id="ftpOutbound"
 		channel="outputChannel" session-factory="ftpSessionFactory" charset="UTF-8"
