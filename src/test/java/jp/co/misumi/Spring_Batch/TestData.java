@@ -1361,7 +1361,7 @@ public class TestData {
 		inptData.setNtvProductName(BLANK);
 		inptData.setOriginNtvCountryName_1(BLANK);
 		inptData.setCompanyName("CompanyName");
-		inptData.setClassifyCdName("ClassifyCdName12122222122121212121212121212121212121212121212");
+		inptData.setClassifyCdName("ClassifyCdName123123123123131231313123131231231313123131313");
 		inptData.setBrandName("BrandName");
 		inptData.setSubsidiaryName("SubsidiaryName");
 		inptData.setSubsidiaryAddress_1("SubsidiaryAddress_1");
@@ -1395,7 +1395,7 @@ public class TestData {
 		OutptData outptData = new OutptData();
 		outptData.setExportFlg("0");
 		outptData.setPurcCompanyName("CompanyName");
-		outptData.setClassifyName("ClassifyCdName123123123123131231313123131231231313123131313");
+		outptData.setClassifyName("ClassifyCdName123123123123131231");
 		outptData.setBrandName("BrandName");
 		outptData.setSuppsubSubsidiaryName("SubsidiaryName");
 		outptData.setSuppsubAddress_1("SubsidiaryAddress_1");
@@ -1427,7 +1427,8 @@ public class TestData {
 	public static InptData getExportFlgTrueExisInData() {
 
 		InptData inptData = new InptData();
-
+		inptData.setSubsidiaryCd(custsubSubsidiaryCd);
+		
 		inptData.setCompanyName("CompanyName");
 		inptData.setClassifyCdName("ClassifyCdName1231231231231231313123131312313213213132123132123132");
 		inptData.setBrandName("BrandName");
@@ -1463,7 +1464,7 @@ public class TestData {
 		OutptData outptData = new OutptData();
 		outptData.setExportFlg("1");
 		outptData.setPurcCompanyName("CompanyName");
-		outptData.setClassifyName("ClassifyCdName12312313212312312313123123123123123123123123");
+		outptData.setClassifyName("ClassifyCdName123123123123123131");
 		outptData.setBrandName("BrandName");
 		outptData.setSuppsubSubsidiaryName("SubsidiaryName");
 		outptData.setSuppsubAddress_1("SubsidiaryAddress_1");
@@ -1775,7 +1776,7 @@ public class TestData {
 	public static InptData getShipToCdNotExistInputData() {
 
 		InptData inptData = new InptData();
-		inptData.setShipToCityCd(custCityCd);
+		inptData.setCustCityCd(custCityCd);
 
 		return inptData;
 	}

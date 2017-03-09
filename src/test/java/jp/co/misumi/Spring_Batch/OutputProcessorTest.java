@@ -452,17 +452,6 @@ public class OutputProcessorTest extends TestCase {
 		Assert.assertEquals(expected, actual);
 	}
 
-	private void assertEqualsCustomiz(InptData inptData, OutptData expectedOutptData) {
-		try {
-			OutptItemProcessor outptItemProcessor = new OutptItemProcessor();
-			OutptData actualOutptData = outptItemProcessor.process(inptData);
-			TestUtil.assertDataEquals(expectedOutptData, actualOutptData);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	public void testBrandProductCdJp2() {
 		String productCdMst = "1234567890123456789012345678901234";
 		String branNmForProductCd = "12345678901234567890";
@@ -484,6 +473,17 @@ public class OutputProcessorTest extends TestCase {
 			OutptItemProcessor outptItemProcessor = new OutptItemProcessor();
 			String actualOutptData = outptItemProcessor.getBrandProductCdJp(productCdMst, branNmForProductCd);
 			Assert.assertEquals(expectedOutptData, actualOutptData);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void assertEqualsCustomiz(InptData inptData, OutptData expectedOutptData) {
+		try {
+			OutptItemProcessor outptItemProcessor = new OutptItemProcessor();
+			OutptData actualOutptData = outptItemProcessor.process(inptData);
+			TestUtil.assertDataEquals(expectedOutptData, actualOutptData);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

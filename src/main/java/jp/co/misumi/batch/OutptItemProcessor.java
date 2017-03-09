@@ -302,7 +302,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		result.setBillToCountryCd(item.getBillToCountryCd());
 		// 売掛先国名
 		result.setBillToCountryName(getInforName(result.getExportFlg(),
-				item.getNtvCountryName_1(), item.getCountryName()));
+				item.getBillToNtvCountryName_1(), item.getBillToCountryName()));
 		// 売掛先電話番号
 		result.setBillToTel(item.getBillToTel());
 		// 売掛先FAX番号
@@ -397,14 +397,14 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		result.setFinalCustsubCustCd(item.getCustsubCustCd());
 		// 最終得意先名(現地語）
 		result.setFinalCustName(getInforName(result.getExportFlg(), 
-				item.getNtvCustName1(), item.getCustName()));
+				item.getCustomerNtvCustName1(), item.getCustomerCustName()));
 		// 最終得意先名（英語）result.setFinalCustNameEn(item.getFinalCustNameEn());
 		//TODO
 		// 最終直送先コード
 		result.setFinalCustsubShipToCd(item.getCustsubShipToCd());
 		// 最終直送先名
 		result.setFinalShipToName(getInforName(result.getExportFlg(), 
-				item.getNtvShipToName1(), item.getShipToName()));
+				item.getSubsidiaryNtvShipToName1(), item.getSubsidiaryShipToName()));
 		// 受注伝票番号
 		result.setSoVoucherNo(item.getSovoucherno());
 		// 受注年月日
@@ -779,7 +779,8 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		result.setDeliAttentionKanaJp(setKanaJp(result.getArrUserDivJp(), item.getNtvDeliAttention()));
 		// 納入担当部課名（カナ）_日本用
 		result.setDeliDeptKanaJp(item.getNtvDeliDept());
-		// 地区コード_日本用result.setCityCdJp(item.getCityCdJp());
+		// 地区コード_日本用
+		result.setCityCdJp(nvl(item.getShipToCd(), item.getShipToCityCd(), item.getCustCityCd()));
 		// 備考(自動車規格コード)_日本用
 		result.setAutomobileStandardCdJp(item.getAutomobileStandardCd());
 		// 個口数SEQ_日本用
@@ -904,7 +905,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	public String getInforName(String flg, String infor1, String infor2){
 
 		if (flg == "0") {
-			if (isEmpty(infor1)) {
+			if (!isEmpty(infor1)) {
 				return infor1;
 			}
 			else {
