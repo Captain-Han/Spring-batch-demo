@@ -8,9 +8,11 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FtpTasklet implements Tasklet {
-
+	final Logger logger = LoggerFactory.getLogger(OutptDataProcessor.class);
 	private String fileName;
 	private MessageChannel ftpChannel;
 
@@ -19,19 +21,18 @@ public class FtpTasklet implements Tasklet {
 
 		File file = new File(fileName);
 		
-		System.out.println(fileName);
-		
 		if (file.exists()) {
 			Message<File> message = MessageBuilder.withPayload(file).build();
-			/*try {*/
+			try {
+				logger.info("File : {} is sending to Ftp.", fileName);
 				ftpChannel.send(message);
-			/*} catch (Exception e) {
+				logger.info("File : {} has sended to Ftp.", fileName);
+			} catch (Exception e) {
 				
-				System.out.println("Could not send file per SFTP: " + e);
-				System.out.println(e.getMessage());
-			}*/
+				logger.error("Could not send file:{} to Ftp.", fileName);
+			}
 		} else {
-			System.out.println("File does not exist.");
+			logger.warn("File : {} does not exist.", fileName);
 		}
 
 	return RepeatStatus.FINISHED;

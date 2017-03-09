@@ -1,6 +1,5 @@
 package jp.co.sysevo.batch;
 
-import jp.co.sysevo.mapper.OutptDataMapper;
 import jp.co.sysevo.model.OutptData;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.BeansException;

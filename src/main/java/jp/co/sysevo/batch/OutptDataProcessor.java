@@ -9,26 +9,31 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import jp.co.sysevo.model.InptData;
 import jp.co.sysevo.model.OutptData;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Component("itemProcessor")
 @Scope("step")
 public class OutptDataProcessor implements ItemProcessor<InptData, OutptData>{
+	final Logger logger = LoggerFactory.getLogger(OutptDataProcessor.class);
+	
 	@Override
 	public OutptData process(InptData item) throws Exception {
-		System.out.println("------------------EntryItemProcessor---------------------");
-		System.out.println(item.toString());
-		
+		logger.info("Exec itemProcessor class.");
+		logger.debug(item.toString());
 		OutptData result = new OutptData();
 		result.setId(item.getId());
 		result.setName(item.getName());
 		result.setSendFlg(true);
 		if (Integer.parseInt(item.getId()) % 2 == 0) {
 			result.setSendFlg(false);
+			logger.debug("InptData.id is {}, senf_flg is {}", item.getId(), result.getSendFlg());
 		}
 		result.setDes("Global");
 		result.setDesJp("Japan");
 		result.setUpdTs(getUpdTs());
-		System.out.println(result.toString());
+		
+		logger.debug(result.toString());
 		return result;
 	}
 
