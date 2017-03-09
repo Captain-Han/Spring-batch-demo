@@ -149,39 +149,39 @@ public class OutptData {
 	/** HSコード */
 	private String hsCd;
 	/** 現法名称 */
-	private String suppsubSubsidiaryName;
+	private String subsidiaryName;
 	/** 現法住所1 */
-	private String suppsubAddress_1;
+	private String subsidiaryAddress_1;
 	/** 現法住所2 */
-	private String suppsubAddress_2;
+	private String subsidiaryAddress_2;
 	/** 現法住所3 */
-	private String suppsubAddress_3;
+	private String subsidiaryAddress_3;
 	/** 現法住所4 */
-	private String suppsubAddress_4;
+	private String subsidiaryAddress_4;
 	/** 現法電話番号 */
-	private String suppsubTel;
+	private String subsidiaryTel;
 	/** 現法FAX番号 */
-	private String suppsubFax;
+	private String subsidiaryFax;
 	/** 現法郵便番号 */
-	private String suppsubPostalCd;
+	private String subsidiaryPostalCd;
 	/** 現法国コード */
-	private String suppsubCountryCd;
+	private String subsidiaryCountryCd;
 	/** 現法国名 */
-	private String suppsubCountryName;
+	private String subsidiaryCountryName;
 	/** 現法登録番号 */
-	private String suppsubLicenceNo;
+	private String subsidiaryLicenceNo;
 	/** 現法税登録番号 */
-	private String suppsubVatRegistrationNumber;
+	private String subsidiaryVatRegistrationNumber;
 	/** 現法中央売上税番号 */
-	private String suppsubSaleTaxNo;
+	private String subsidiarySaleTaxNo;
 	/** 現法物品税管理コード */
-	private String suppsubGoodsTaxMangeCd;
+	private String subsidiaryGoodsTaxMangeCd;
 	/** 現法物品税管理地 */
-	private String suppsubGoodsTaxMangeCity;
+	private String subsidiaryGoodsTaxMangeCity;
 	/** 現法部署名 */
-	private String suppsubDeptName;
+	private String subsidiaryDeptName;
 	/** 現法Commissionerate */
-	private String suppsubCommissionerate;
+	private String subsidiaryCommissionerate;
 	/** エコール得意先コード */
 	private String ecalCustCd;
 	/** 得意先名称（現地語） */
@@ -1454,173 +1454,173 @@ public class OutptData {
 	}
 
 	/** 現法名称 */
-	public String getSuppsubSubsidiaryName() {
-		return suppsubSubsidiaryName;
+	public String getSubsidiaryName() {
+		return subsidiaryName;
 	}
 
 	/** 現法名称 */
-	public void setSuppsubSubsidiaryName(String suppsubSubsidiaryName) {
-		this.suppsubSubsidiaryName = suppsubSubsidiaryName;
+	public void setSubsidiaryName(String subsidiaryName) {
+		this.subsidiaryName = subsidiaryName;
 	}
 
 	/** 現法住所1 */
-	public String getSuppsubAddress_1() {
-		return suppsubAddress_1;
+	public String getSubsidiaryAddress_1() {
+		return subsidiaryAddress_1;
 	}
 
 	/** 現法住所1 */
-	public void setSuppsubAddress_1(String suppsubAddress_1) {
-		this.suppsubAddress_1 = suppsubAddress_1;
+	public void setSubsidiaryAddress_1(String subsidiaryAddress_1) {
+		this.subsidiaryAddress_1 = subsidiaryAddress_1;
 	}
 
 	/** 現法住所2 */
-	public String getSuppsubAddress_2() {
-		return suppsubAddress_2;
+	public String getSubsidiaryAddress_2() {
+		return subsidiaryAddress_2;
 	}
 
 	/** 現法住所2 */
-	public void setSuppsubAddress_2(String suppsubAddress_2) {
-		this.suppsubAddress_2 = suppsubAddress_2;
+	public void setSubsidiaryAddress_2(String subsidiaryAddress_2) {
+		this.subsidiaryAddress_2 = subsidiaryAddress_2;
 	}
 
 	/** 現法住所3 */
-	public String getSuppsubAddress_3() {
-		return suppsubAddress_3;
+	public String getSubsidiaryAddress_3() {
+		return subsidiaryAddress_3;
 	}
 
 	/** 現法住所3 */
-	public void setSuppsubAddress_3(String suppsubAddress_3) {
-		this.suppsubAddress_3 = suppsubAddress_3;
+	public void setSubsidiaryAddress_3(String subsidiaryAddress_3) {
+		this.subsidiaryAddress_3 = subsidiaryAddress_3;
 	}
 
 	/** 現法住所4 */
-	public String getSuppsubAddress_4() {
-		return suppsubAddress_4;
+	public String getSubsidiaryAddress_4() {
+		return subsidiaryAddress_4;
 	}
 
 	/** 現法住所4 */
-	public void setSuppsubAddress_4(String suppsubAddress_4) {
-		this.suppsubAddress_4 = suppsubAddress_4;
+	public void setSubsidiaryAddress_4(String subsidiaryAddress_4) {
+		this.subsidiaryAddress_4 = subsidiaryAddress_4;
 	}
 
 	/** 現法電話番号 */
-	public String getSuppsubTel() {
-		return suppsubTel;
+	public String getSubsidiaryTel() {
+		return subsidiaryTel;
 	}
 
 	/** 現法電話番号 */
-	public void setSuppsubTel(String suppsubTel) {
-		this.suppsubTel = suppsubTel;
+	public void setSubsidiaryTel(String subsidiaryTel) {
+		this.subsidiaryTel = subsidiaryTel;
 	}
 
 	/** 現法FAX番号 */
-	public String getSuppsubFax() {
-		return suppsubFax;
+	public String getSubsidiaryFax() {
+		return subsidiaryFax;
 	}
 
 	/** 現法FAX番号 */
-	public void setSuppsubFax(String suppsubFax) {
-		this.suppsubFax = suppsubFax;
+	public void setSubsidiaryFax(String subsidiaryFax) {
+		this.subsidiaryFax = subsidiaryFax;
 	}
 
 	/** 現法郵便番号 */
-	public String getSuppsubPostalCd() {
-		return suppsubPostalCd;
+	public String getSubsidiaryPostalCd() {
+		return subsidiaryPostalCd;
 	}
 
 	/** 現法郵便番号 */
-	public void setSuppsubPostalCd(String suppsubPostalCd) {
-		this.suppsubPostalCd = suppsubPostalCd;
+	public void setSubsidiaryPostalCd(String subsidiaryPostalCd) {
+		this.subsidiaryPostalCd = subsidiaryPostalCd;
 	}
 
 	/** 現法国コード */
-	public String getSuppsubCountryCd() {
-		return suppsubCountryCd;
+	public String getSubsidiaryCountryCd() {
+		return subsidiaryCountryCd;
 	}
 
 	/** 現法国コード */
-	public void setSuppsubCountryCd(String suppsubCountryCd) {
-		this.suppsubCountryCd = suppsubCountryCd;
+	public void setSubsidiaryCountryCd(String subsidiaryCountryCd) {
+		this.subsidiaryCountryCd = subsidiaryCountryCd;
 	}
 
 	/** 現法国名 */
-	public String getSuppsubCountryName() {
-		return suppsubCountryName;
+	public String getSubsidiaryCountryName() {
+		return subsidiaryCountryName;
 	}
 
 	/** 現法国名 */
-	public void setSuppsubCountryName(String suppsubCountryName) {
-		this.suppsubCountryName = suppsubCountryName;
+	public void setSubsidiaryCountryName(String subsidiaryCountryName) {
+		this.subsidiaryCountryName = subsidiaryCountryName;
 	}
 
 	/** 現法登録番号 */
-	public String getSuppsubLicenceNo() {
-		return suppsubLicenceNo;
+	public String getSubsidiaryLicenceNo() {
+		return subsidiaryLicenceNo;
 	}
 
 	/** 現法登録番号 */
-	public void setSuppsubLicenceNo(String suppsubLicenceNo) {
-		this.suppsubLicenceNo = suppsubLicenceNo;
+	public void setSubsidiaryLicenceNo(String subsidiaryLicenceNo) {
+		this.subsidiaryLicenceNo = subsidiaryLicenceNo;
 	}
 
 	/** 現法税登録番号 */
-	public String getSuppsubVatRegistrationNumber() {
-		return suppsubVatRegistrationNumber;
+	public String getSubsidiaryVatRegistrationNumber() {
+		return subsidiaryVatRegistrationNumber;
 	}
 
 	/** 現法税登録番号 */
-	public void setSuppsubVatRegistrationNumber(String suppsubVatRegistrationNumber) {
-		this.suppsubVatRegistrationNumber = suppsubVatRegistrationNumber;
+	public void setSubsidiaryVatRegistrationNumber(String subsidiaryVatRegistrationNumber) {
+		this.subsidiaryVatRegistrationNumber = subsidiaryVatRegistrationNumber;
 	}
 
 	/** 現法中央売上税番号 */
-	public String getSuppsubSaleTaxNo() {
-		return suppsubSaleTaxNo;
+	public String getSubsidiarySaleTaxNo() {
+		return subsidiarySaleTaxNo;
 	}
 
 	/** 現法中央売上税番号 */
-	public void setSuppsubSaleTaxNo(String suppsubSaleTaxNo) {
-		this.suppsubSaleTaxNo = suppsubSaleTaxNo;
+	public void setSubsidiarySaleTaxNo(String subsidiarySaleTaxNo) {
+		this.subsidiarySaleTaxNo = subsidiarySaleTaxNo;
 	}
 
 	/** 現法物品税管理コード */
-	public String getSuppsubGoodsTaxMangeCd() {
-		return suppsubGoodsTaxMangeCd;
+	public String getSubsidiaryGoodsTaxMangeCd() {
+		return subsidiaryGoodsTaxMangeCd;
 	}
 
 	/** 現法物品税管理コード */
-	public void setSuppsubGoodsTaxMangeCd(String suppsubGoodsTaxMangeCd) {
-		this.suppsubGoodsTaxMangeCd = suppsubGoodsTaxMangeCd;
+	public void setSubsidiaryGoodsTaxMangeCd(String subsidiaryGoodsTaxMangeCd) {
+		this.subsidiaryGoodsTaxMangeCd = subsidiaryGoodsTaxMangeCd;
 	}
 
 	/** 現法物品税管理地 */
-	public String getSuppsubGoodsTaxMangeCity() {
-		return suppsubGoodsTaxMangeCity;
+	public String getSubsidiaryGoodsTaxMangeCity() {
+		return subsidiaryGoodsTaxMangeCity;
 	}
 
 	/** 現法物品税管理地 */
-	public void setSuppsubGoodsTaxMangeCity(String suppsubGoodsTaxMangeCity) {
-		this.suppsubGoodsTaxMangeCity = suppsubGoodsTaxMangeCity;
+	public void setSubsidiaryGoodsTaxMangeCity(String subsidiaryGoodsTaxMangeCity) {
+		this.subsidiaryGoodsTaxMangeCity = subsidiaryGoodsTaxMangeCity;
 	}
 
 	/** 現法部署名 */
-	public String getSuppsubDeptName() {
-		return suppsubDeptName;
+	public String getSubsidiaryDeptName() {
+		return subsidiaryDeptName;
 	}
 
 	/** 現法部署名 */
-	public void setSuppsubDeptName(String suppsubDeptName) {
-		this.suppsubDeptName = suppsubDeptName;
+	public void setSubsidiaryDeptName(String subsidiaryDeptName) {
+		this.subsidiaryDeptName = subsidiaryDeptName;
 	}
 
 	/** 現法Commissionerate */
-	public String getSuppsubCommissionerate() {
-		return suppsubCommissionerate;
+	public String getSubsidiaryCommissionerate() {
+		return subsidiaryCommissionerate;
 	}
 
 	/** 現法Commissionerate */
-	public void setSuppsubCommissionerate(String suppsubCommissionerate) {
-		this.suppsubCommissionerate = suppsubCommissionerate;
+	public void setSubsidiaryCommissionerate(String subsidiaryCommissionerate) {
+		this.subsidiaryCommissionerate = subsidiaryCommissionerate;
 	}
 
 	/** エコール得意先コード */
@@ -4477,23 +4477,23 @@ public class OutptData {
 				", invPackPrintNumCopy=" + invPackPrintNumCopy +
 				", invPackRetainFlg='" + invPackRetainFlg + '\'' +
 				", hsCd='" + hsCd + '\'' +
-				", suppsubSubsidiaryName='" + suppsubSubsidiaryName + '\'' +
-				", suppsubAddress_1='" + suppsubAddress_1 + '\'' +
-				", suppsubAddress_2='" + suppsubAddress_2 + '\'' +
-				", suppsubAddress_3='" + suppsubAddress_3 + '\'' +
-				", suppsubAddress_4='" + suppsubAddress_4 + '\'' +
-				", suppsubTel='" + suppsubTel + '\'' +
-				", suppsubFax='" + suppsubFax + '\'' +
-				", suppsubPostalCd='" + suppsubPostalCd + '\'' +
-				", suppsubCountryCd='" + suppsubCountryCd + '\'' +
-				", suppsubCountryName='" + suppsubCountryName + '\'' +
-				", suppsubLicenceNo='" + suppsubLicenceNo + '\'' +
-				", suppsubVatRegistrationNumber='" + suppsubVatRegistrationNumber + '\'' +
-				", suppsubSaleTaxNo='" + suppsubSaleTaxNo + '\'' +
-				", suppsubGoodsTaxMangeCd='" + suppsubGoodsTaxMangeCd + '\'' +
-				", suppsubGoodsTaxMangeCity='" + suppsubGoodsTaxMangeCity + '\'' +
-				", suppsubDeptName='" + suppsubDeptName + '\'' +
-				", suppsubCommissionerate='" + suppsubCommissionerate + '\'' +
+				", subsidiaryName='" + subsidiaryName + '\'' +
+				", subsidiaryAddress_1='" + subsidiaryAddress_1 + '\'' +
+				", subsidiaryAddress_2='" + subsidiaryAddress_2 + '\'' +
+				", subsidiaryAddress_3='" + subsidiaryAddress_3 + '\'' +
+				", subsidiaryAddress_4='" + subsidiaryAddress_4 + '\'' +
+				", subsidiaryTel='" + subsidiaryTel + '\'' +
+				", subsidiaryFax='" + subsidiaryFax + '\'' +
+				", subsidiaryPostalCd='" + subsidiaryPostalCd + '\'' +
+				", subsidiaryCountryCd='" + subsidiaryCountryCd + '\'' +
+				", subsidiaryCountryName='" + subsidiaryCountryName + '\'' +
+				", subsidiaryLicenceNo='" + subsidiaryLicenceNo + '\'' +
+				", subsidiaryVatRegistrationNumber='" + subsidiaryVatRegistrationNumber + '\'' +
+				", subsidiarySaleTaxNo='" + subsidiarySaleTaxNo + '\'' +
+				", subsidiaryGoodsTaxMangeCd='" + subsidiaryGoodsTaxMangeCd + '\'' +
+				", subsidiaryGoodsTaxMangeCity='" + subsidiaryGoodsTaxMangeCity + '\'' +
+				", subsidiaryDeptName='" + subsidiaryDeptName + '\'' +
+				", subsidiaryCommissionerate='" + subsidiaryCommissionerate + '\'' +
 				", ecalCustCd='" + ecalCustCd + '\'' +
 				", custName='" + custName + '\'' +
 				", custNameEn='" + custNameEn + '\'' +

@@ -590,18 +590,12 @@ public class InptData {
 	private String custCountryCd;
 	/**受注明細．直送先国コード */
 	private String shipToCountryCd;
-	/**部材品受注内訳ファイル.現法コード*/
+	/** 部材品受注内訳ファイル.現法コード */
 	private String soSubsidiaryCd;
-
-	/**部材品受注内訳ファイル.現法コード*/
-	public String getSoSubsidiaryCd() {
-		return soSubsidiaryCd;
-	}
-
-	/**部材品受注内訳ファイル.現法コード*/
-	public void setSoSubsidiaryCd(String soSubsidiaryCd) {
-		this.soSubsidiaryCd = soSubsidiaryCd;
-	}
+	/** セルマスタ.セル名称 */
+	private String cellName;
+	/** セルマスタ.セル名称（現地語）*/
+	private String ntvCellName;
 
 	public InptData() {
 
@@ -3525,5 +3519,35 @@ public class InptData {
 	/** 受注明細．直送先国コード*/
 	public void setShipToCountryCd(String shipToCountryCd) {
 		this.shipToCountryCd = shipToCountryCd;
+	}
+
+	/**部材品受注内訳ファイル.現法コード*/
+	public String getSoSubsidiaryCd() {
+		return soSubsidiaryCd;
+	}
+
+	/**部材品受注内訳ファイル.現法コード*/
+	public void setSoSubsidiaryCd(String soSubsidiaryCd) {
+		this.soSubsidiaryCd = soSubsidiaryCd;
+	}
+
+	/** セルマスタ.セル名称 */
+	public String getCellName() {
+		return cellName;
+	}
+
+	/** セルマスタ.セル名称 */
+	public void setCellName(String cellName) {
+		this.cellName = cellName;
+	}
+
+	/** セルマスタ.セル名称（現地語）*/
+	public String getNtvCellName() {
+		return ntvCellName;
+	}
+
+	/** セルマスタ.セル名称（現地語）*/
+	public void setNtvCellName(String ntvCellName) {
+		this.ntvCellName = ntvCellName;
 	}
 }
