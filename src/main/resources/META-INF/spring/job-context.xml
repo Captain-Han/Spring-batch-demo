@@ -61,7 +61,49 @@
 				</property>
 				<property name="fieldExtractor">
 					<bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
-						<property name="names" value="id, name, des, age" />
+						<property name="names" value="crtDt, suppsubSubsidiaryCd, mcPlantCd, custCd, supplierCd, plant,
+							shipToCd, schdArrDt, schdShipDt, refStr, custRefCd, custRef,
+							cystRefNtv, custSubRef, globalNo, cometSeq, productCd, innerCd,
+							productAssort, qty, purcPrice, excludeTaxSUPrice, purcCompanyName, purcCompanyNameEn,
+							purcCountryCd, purcCountryName, classifyCd, classifyName, bacthDiv, stkDiv,
+							dataDiv, deliDiv, childSeq, mcSpecifyVoucherDiv, packingRank, deliNoteSendFlg,
+							specifyVoucherDiv, moveTicketDiv, tempVoucherDiv, labelDiv, deliDeptCd, deliAttentionCd,
+							deliDept, deliAttention, brandCd, brandNameEn, frtAreaCd, brandName,
+							misumiProductCd, poQtyPerCase, barcodeGlobalNo, packingNo, exportFlg, boxNo,
+							comInvFlg, comInvPrintNumOrgn, comInvPrintNumCopy, comInvRetainFlg, deliOrderFlg, deliOrderPrintNumOrgn,
+							deliInvPrintNumCopy, deliOrderRetainFlg, packListFlg, packListPrintNumOrgn, packListPrintNumCopy, packListSaveFlg,
+							invPackFlg, invPackPrintNumOrgn, invPackPrintNumCopy, invPackRetainFlg, hsCd, subsidiaryName,
+							subsidiaryAddress_1, subsidiaryAddress_2, subsidiaryAddress_3, subsidiaryAddress_4, subsidiaryTel, subsidiaryFax,
+							subsidiaryPostalCd, subsidiaryCountryCd, subsidiaryCountryName, subsidiaryLicenceNo, subsidiaryVatRegistrationNumber, ecalCustCd,
+							custName, custNameEn, custAddress_1, custAddress_2, custAddress_3, custAddress_4,
+							custDeptName, custPostalNo, custCountryCd, custCountryCdUps, custCountryName, custCityName,
+							custTel, custFax, custAttention, dtlComment, businessinstruct1ShowFlg, ntvBusinessinstruct1,
+							businessinstruct2ShowFlg, ntvBusinessinstruct2, packingInstruct1ShowFlg, ntvPackingInstruct1, packingInstruct2ShowFlg, ntvPackingInstruct2,
+							csInstruct, custOfficeLicenseNo, billToCd, billToName, billToAddress_1, billToAddress_2,
+							billToAddress_3, billToAddress_4, billToNtvBillToDept, billToPostalCd, billToCountryCd, billToCountryName,
+							billToTel, billToFax, ntvBillToPerson , ntvReceivableRemarks_1, ntvReceivableRemarks_2, shipToName,
+							shipToAddress_1, shipToAddress_2, shipToAddress_3, shipToAddress_4, shipToDeptName, shipToPostalNo,
+							shipToCountryCd, shipUpsCountryCd, shipToCountryName, shipToCityName, shipToTel, shipToFax,
+							shipToAttention, sub1PlantCd, sub1DeptName, sub1DeptAddress_1, sub1DeptAddress_2, sub1DeptAddress_3,
+							sub1DeptAddress_4, sub1DeptPostalCd, sub1DeptCountryCd, sub1DeptTel, sub1DeptFax, shippingDestinationCd,
+							arrierName, carrierNameKana, paymentTerms, incoterms, settlementMethod, productGenericNameFlg,
+							voucherDiv, taxAreaCd, taxFreeFlg, uniformInvType, arCloseUnit, arClosingDay,
+							finalCustsubCustCd, finalCustName, finalCustNameEn, finalCustsubShipToCd, finalShipToName, soVoucherNo,
+							soDate, productName, weight, weightUnit, countryOfOrignShowFlg, countryOfOrigin,
+							countryNameOfOrigin, unitOfMeasure, sUnitPriceCcyCd, pUnitPriceCcyCd, totalOfWeight, sumQty,
+							soAmt, inTaxSPrice, soAmtSum, totalTaxAmt, offAmt, otherDsctAmount,
+							frtDiscountFlg, totalAmt, originalInvoiceNo, journalDt, originalInvoiceDt, originalGlobalNo,
+							originalSoVoucherNo, reasonCd, reasonContent, srcSumAmt, diffAmt, creditTaxAmt,
+							creditSumAmt, shipStopFlg, supplierInvNo, crd, deptCd, specialCustBoxNo,
+							specialCustBoxGrp, transportMeans, hazardFlg, csWindow, discountShowFlg, hsCdShowFlg,
+							netWeightShowFlg, directShipFlg, suppsubBusinessFlg, carrierAcctNo, serviceStopDiv, taxInExDiv,
+							specifyVad, ifDiv, deliveryTime, sendAnsDiv, rdInstructComment, deliveryDate,
+							scCodeName, custNameKana, rdInstructFlg, ntvCustDept, ntvCustAttention, productNameKana,
+							otherDeliDiv, ctaxRate, plantDiv, cellCd, custDeptEn, custAttentionEn,
+							dmCd_1, dmCd_2, dmCd_3, dmCd_4, dmCd_5, custMailAddress,
+							shipToMailAddress, exportPurcUpri, exportPurcUpriCur, freightUpri, importUpri, importTaxUpri,
+							freightXrate, suppsubCurXrate, purcAmt, supplierInvoiceDate, poDt, sumSoAmt,
+							incoterms_1, incoterms_2, incoterms_3, shipPlantCd, firstCustFlg, updDiv" />
 					</bean>
 				</property>
 			</bean>
@@ -77,7 +119,17 @@
 				</property>
 				<property name="fieldExtractor">
 					<bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
-						<property name="names" value="id, name, sendFlg, desJp" />
+						<property name="names" value="crtDtJp, mcPlantCdJp, custCdJp, mcPlantDivJp, globalNoJp, childSeqJp,
+							dataDivJp, brandNameForProductCdJp, brandProductCdJp, subPoSeqJp, receivableMcCdJp, ntvDeptNameAbbJp,
+							ntvDeptTelAbbJp, packingFlgJp, packingPrintNumOrgnJp, packingPrintNumCopyJp, packingRetainFlgJp, engPackingPrintFlgJp,
+							engPackingPrintNumOrgnJp, engPackingPrintNumCopyJp, engPackingRetainFlgJp, tmpPackingPrintFlgJp, tmpPackingPrintNumOrgnJp, tmpPackingPrintNumCopyJp,
+							tmpPackingRetainFlgJp, invoiceFlgJp, invoicePrintNumOrgnJp, invoicePrintNumCopyJp, invoiceRetainFlgJp, labelEarlyDivJp,
+							labelEarlyObjectDivJp, arrDeptDivJp, arrUserDivJp, companyNameKanaJp, rankFlgJp, mangShipToFlgJp,
+							patrolDivJp, custNameKanaJp, custName_2Jp, ntvBusinessInstruct1J, ntvBusinessInstruct2J, ntvBusinessInstruct3J, ntvBusinessInstruct4J,
+							ntvBusinessInstruct5J, ntvPackingInstruct1J, ntvPackingInstruct2J, ntvPackingInstruct3J,
+							ntvPackingInstruct4J, ntvPackingInstruct5J, shipToAttentionKanaJp, shipToDeptKanaJp, custDeliAttentionKanaJp, custDeliDeptKanaJp, custAttentionKanaJp,
+							custDeptKanaJp, shipToNameKanaJp, deliAttentionKanaJp, deliDeptKanaJp, cityCdJp, automobileStandardCdJp,
+							unitQtySeqJp, sendedQtyJp, storkChargeApplyDivJp, deliNoteNoMjp, sumAmtJp, oldDeliNoteNoJp" />
 					</bean>
 				</property>
 			</bean>

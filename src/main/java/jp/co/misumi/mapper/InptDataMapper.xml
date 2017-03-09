@@ -304,9 +304,9 @@
 	</resultMap>
 
 	<select id="findInptData" resultMap="InptMap">
-	SELECT id, name, age, des
-	FROM customers
-	WHERE name LIKE #{name}
-	ORDER BY id ASC LIMIT #{_skiprows}, #{_pagesize}
+	  SELECT id, name, age, des
+	  FROM customers
+	  WHERE name LIKE #{name}
+	  ORDER BY id ASC LIMIT #{_skiprows}, #{_pagesize}
 	</select>
 </mapper>
