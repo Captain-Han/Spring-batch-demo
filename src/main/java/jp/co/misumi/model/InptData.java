@@ -468,25 +468,25 @@ public class InptData {
 	private String customerCustName;
 	/** 得意先直送先物流.ラベル早出し区分 */
 	private String labelEarlyDiv;
-	/** 得意先直送先物流.梱包指示テキスト(現地語)１ */
-	private String ntvBusinessInstruct1J;
-	/** 得意先直送先物流.梱包指示テキスト(現地語)２ */
-	private String ntvBusinessInstruct2J;
-	/** 得意先直送先物流.梱包指示テキスト(現地語)３ */
-	private String ntvBusinessInstruct3J;
-	/** 得意先直送先物流.梱包指示テキスト(現地語)４ */
-	private String ntvBusinessInstruct4J;
-	/** 得意先直送先物流.梱包指示テキスト(現地語)５ */
-	private String ntvBusinessInstruct5J;
 	/** 得意先直送先物流.事務指示テキスト(現地語)１ */
-	private String ntvPackingInstruct1J;
+	private String ntvBusinessInstruct1J;
 	/** 得意先直送先物流.事務指示テキスト(現地語)２ */
-	private String ntvPackingInstruct2J;
+	private String ntvBusinessInstruct2J;
 	/** 得意先直送先物流.事務指示テキスト(現地語)３ */
-	private String ntvPackingInstruct3J;
+	private String ntvBusinessInstruct3J;
 	/** 得意先直送先物流.事務指示テキスト(現地語)４ */
-	private String ntvPackingInstruct4J;
+	private String ntvBusinessInstruct4J;
 	/** 得意先直送先物流.事務指示テキスト(現地語)５ */
+	private String ntvBusinessInstruct5J;
+	/** 得意先直送先物流.梱包指示テキスト(現地語)１ */
+	private String ntvPackingInstruct1J;
+	/** 得意先直送先物流.梱包指示テキスト(現地語)２ */
+	private String ntvPackingInstruct2J;
+	/** 得意先直送先物流.梱包指示テキスト(現地語)３ */
+	private String ntvPackingInstruct3J;
+	/** 得意先直送先物流.梱包指示テキスト(現地語)４ */
+	private String ntvPackingInstruct4J;
+	/** 得意先直送先物流.梱包指示テキスト(現地語)５ */
 	private String ntvPackingInstruct5J;
 	/** 売掛先マスタ.売掛先名（現地語） */
 	private String ntvBillToName;
@@ -590,6 +590,18 @@ public class InptData {
 	private String custCountryCd;
 	/**受注明細．直送先国コード */
 	private String shipToCountryCd;
+	/**部材品受注内訳ファイル.現法コード*/
+	private String soSubsidiaryCd;
+
+	/**部材品受注内訳ファイル.現法コード*/
+	public String getSoSubsidiaryCd() {
+		return soSubsidiaryCd;
+	}
+
+	/**部材品受注内訳ファイル.現法コード*/
+	public void setSoSubsidiaryCd(String soSubsidiaryCd) {
+		this.soSubsidiaryCd = soSubsidiaryCd;
+	}
 
 	public InptData() {
 

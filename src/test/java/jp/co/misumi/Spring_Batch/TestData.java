@@ -439,7 +439,7 @@ public class TestData {
 		inptData.setNtvReceivableRemarks_2(ntvReceivableRemarks_2);
 		inptData.setNtvDeliDept(ntvDeliDept);
 		inptData.setShipToPostalCd(shipToPostalCd);
-		inptData.setShipToCountryCd(shipToCountryCd);
+		inptData.setShipToCountryCdMst(shipToCountryCd);
 		inptData.setShipToUpsCountryCd(shipToUpsCountryCd);
 		inptData.setShipToCityName(shipToCityName);
 		inptData.setShipToTel(shipToTel);
@@ -693,16 +693,16 @@ public class TestData {
 		outptData.setCtaxRate(FIXED_VALUE);
 		// 日付 todo
 		// ブランク
-		outptData.setBoxNo(BLANK);
+		outptData.setBoxNo("                    ");
 		outptData.setSuppsubSaleTaxNo(BLANK);
 		outptData.setSuppsubGoodsTaxMangeCd(BLANK);
 		outptData.setSuppsubGoodsTaxMangeCity(BLANK);
 		outptData.setSuppsubDeptName(BLANK);
 		outptData.setSuppsubCommissionerate(BLANK);
-		outptData.setOriginalInvoiceNo(BLANK);
-		outptData.setOriginalGlobalNo(BLANK);
-		outptData.setOriginalSoVoucherNo(BLANK);
-		outptData.setReasonCd(BLANK);
+		outptData.setOriginalInvoiceNo("            ");
+		outptData.setOriginalGlobalNo("              ");
+		outptData.setOriginalSoVoucherNo("            ");
+		outptData.setReasonCd("    ");
 		outptData.setReasonContent(BLANK);
 		outptData.setInvoiceRemarks_3(BLANK);
 		outptData.setInvoiceRemarks_1(BLANK);
@@ -711,8 +711,8 @@ public class TestData {
 		outptData.setDeptName(BLANK);
 		outptData.setCommissionerate(BLANK);
 		outptData.setImportNo(BLANK);
-		outptData.setArrNo(BLANK);
-		outptData.setShipNo(BLANK);
+		outptData.setArrNo("           ");
+		outptData.setShipNo("                       ");
 		outptData.setLocalCity(BLANK);
 //		outptData.setDeliveryTime(BLANK);
 		outptData.setSendAnsDiv(BLANK);
@@ -996,7 +996,7 @@ public class TestData {
 	public static InptData getInptDataChildSeq() {
 
 		InptData inptData = new InptData();
-		inptData.setChildSeq(childSeq);
+		inptData.setSoSubsidiaryCd("SoSubsidiaryCd");
 
 		return inptData;
 	}
@@ -1174,15 +1174,15 @@ public class TestData {
 	public static InptData getInptNoShipToCd() {
 
 		InptData inptData = new InptData();
-		inptData.setShipToFrtAreaCd(shipToFrtAreaCd);
-		inptData.setShipToBusinessinstruct1ShowFlg(shipToBusinessinstruct1ShowFlg);
-		inptData.setShipToNtvBusinessinstruct1(shipToNtvBusinessinstruct1);
-		inptData.setShipToBusinessinstruct2ShowFlg(shipToBusinessinstruct2ShowFlg);
-		inptData.setShipToNtvBusinessinstruct2(shipToNtvBusinessinstruct2);
-		inptData.setShipToPackingInstruct1ShowFlg(shipToPackingInstruct1ShowFlg);
-		inptData.setShipToNtvPackingInstruct1(shipToNtvPackingInstruct1);
-		inptData.setShipToPackingInstruct2ShowFlg(shipToPackingInstruct2ShowFlg);
-		inptData.setShipToNtvPackingInstruct2(shipToNtvPackingInstruct2);
+		inptData.setCustFrtAreaCd(shipToFrtAreaCd);
+		inptData.setCustBusinessinstruct1ShowFlg(shipToBusinessinstruct1ShowFlg);
+		inptData.setCustNtvBusinessinstruct1(shipToNtvBusinessinstruct1);
+		inptData.setCustBusinessinstruct2ShowFlg(shipToBusinessinstruct2ShowFlg);
+		inptData.setCustNtvBusinessinstruct2(shipToNtvBusinessinstruct2);
+		inptData.setCustPackingInstruct1ShowFlg(shipToPackingInstruct1ShowFlg);
+		inptData.setCustNtvPackingInstruct1(shipToNtvPackingInstruct1);
+		inptData.setCustPackingInstruct2ShowFlg(shipToPackingInstruct2ShowFlg);
+		inptData.setCustNtvPackingInstruct2(shipToNtvPackingInstruct2);
 
 		return inptData;
 	}
@@ -1427,7 +1427,7 @@ public class TestData {
 	public static InptData getExportFlgTrueExisInData() {
 
 		InptData inptData = new InptData();
-		inptData.setSubsidiaryCd(custsubSubsidiaryCd);
+		inptData.setCustsubSubsidiaryCd(custsubSubsidiaryCd);
 		
 		inptData.setCompanyName("CompanyName");
 		inptData.setClassifyCdName("ClassifyCdName1231231231231231313123131312313213213132123132123132");
@@ -1535,12 +1535,12 @@ public class TestData {
 		inptData.setShipToNtvAddress_3(BLANK);
 		inptData.setShipToNtvAddress_4(BLANK);
 		inptData.setShipToNtvCountryName_1(BLANK);
-		//inptData.();
-		inptData.setBillToHalfwidthAddress_1("BillToHalfwidthAddress_1");
-		inptData.setBillToHalfwidthAddress_2("BillToHalfwidthAddress_2");
-		inptData.setBillToHalfwidthAddress_3("BillToHalfwidthAddress_3");
-		inptData.setBillToHalfwidthAddress_4("BillToHalfwidthAddress_4");
-		inptData.setBillToCountryName("BillToCountryName");
+		inptData.setShipToName("shipToName");
+		inptData.setShipToHalfwidthAddress_1("BillToHalfwidthAddress_1");
+		inptData.setShipToHalfwidthAddress_2("BillToHalfwidthAddress_2");
+		inptData.setShipToHalfwidthAddress_3("BillToHalfwidthAddress_3");
+		inptData.setShipToHalfwidthAddress_4("BillToHalfwidthAddress_4");
+		inptData.setShipToCountryName("BillToCountryName");
 
 		return inptData;
 	}
@@ -1550,7 +1550,44 @@ public class TestData {
 		OutptData outptData = new OutptData();
 		outptData.setShipToCd("test");
 		// 【輸出フラグ】が"0"
-		outptData.setShipToName("");
+		outptData.setShipToName("shipToName");
+		outptData.setShipToAddress_1("BillToHalfwidthAddress_1");
+		outptData.setShipToAddress_2("BillToHalfwidthAddress_2");
+		outptData.setShipToAddress_3("BillToHalfwidthAddress_3");
+		outptData.setShipToAddress_4("BillToHalfwidthAddress_4");
+		outptData.setShipToCountryName("BillToCountryName");
+
+		return outptData;
+	}
+	
+	public static InptData getInputShipToCdTrueNotExistInfor() {
+
+		InptData inptData = new InptData();
+		inptData.setShipToCd("test");
+		inptData.setCustsubSubsidiaryCd(custsubSubsidiaryCd);
+		// 【輸出フラグ】が"1"
+		inptData.setNtvShipToName1(BLANK);
+		inptData.setShipToNtvAddress_1(BLANK);
+		inptData.setShipToNtvAddress_2(BLANK);
+		inptData.setShipToNtvAddress_3(BLANK);
+		inptData.setShipToNtvAddress_4(BLANK);
+		inptData.setShipToNtvCountryName_1(BLANK);
+		inptData.setBillToName("shipToName");
+		inptData.setBillToHalfwidthAddress_1("BillToHalfwidthAddress_1");
+		inptData.setBillToHalfwidthAddress_2("BillToHalfwidthAddress_2");
+		inptData.setBillToHalfwidthAddress_3("BillToHalfwidthAddress_3");
+		inptData.setBillToHalfwidthAddress_4("BillToHalfwidthAddress_4");
+		inptData.setBillToCountryName("BillToCountryName");
+
+		return inptData;
+	}
+
+	public static OutptData getOutputShipToCdTrueNotExistInfor() {
+
+		OutptData outptData = new OutptData();
+		outptData.setShipToCd("test");
+		// 【輸出フラグ】が"1"
+		outptData.setShipToName("shipToName");
 		outptData.setShipToAddress_1("BillToHalfwidthAddress_1");
 		outptData.setShipToAddress_2("BillToHalfwidthAddress_2");
 		outptData.setShipToAddress_3("BillToHalfwidthAddress_3");
@@ -1569,7 +1606,7 @@ public class TestData {
 		inptData.setShipToNtvAddress_2(BLANK);
 		inptData.setShipToNtvAddress_3(BLANK);
 		inptData.setShipToNtvAddress_4(BLANK);
-		inptData.setShipToNtvCountryName_1("");
+		inptData.setShipToNtvCountryName_1(BLANK);
 		inptData.setShipToName("ShipToName");
 		inptData.setShipToHalfwidthAddress_1("ShipToHalfwidthAddress_1");
 		inptData.setShipToHalfwidthAddress_2("ShipToHalfwidthAddress_2");
@@ -1892,8 +1929,8 @@ public class TestData {
 	public static OutptData getGrpNot2ntvDelOutData() {
 
 		OutptData outptData = new OutptData();
-		outptData.setCustDeliAttentionKanaJp(ntvDeliDept);
-		outptData.setCustDeliDeptKanaJp(ntvDeliAttention);
+		outptData.setCustDeliAttentionKanaJp(ntvDeliAttention);
+		outptData.setCustDeliDeptKanaJp(ntvDeliDept);
 
 		return outptData;
 	}

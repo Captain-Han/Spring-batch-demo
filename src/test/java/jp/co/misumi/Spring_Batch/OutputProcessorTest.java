@@ -4,6 +4,9 @@ import jp.co.misumi.batch.OutptItemProcessor;
 import jp.co.misumi.model.InptData;
 import jp.co.misumi.model.OutptData;
 import junit.framework.TestCase;
+
+import java.util.Date;
+
 import org.junit.Assert;
 
 
@@ -271,6 +274,13 @@ public class OutputProcessorTest extends TestCase {
 		assertEqualsCustomiz(inptData, expectedOutptData);
 	}
 
+	public void testShipToCdTrueNotExistInfor() {
+		InptData inptData = TestData.getInputShipToCdTrueNotExistInfor();
+		OutptData expectedOutptData = TestData.getOutputShipToCdTrueNotExistInfor();
+
+		assertEqualsCustomiz(inptData, expectedOutptData);
+	}
+	
 	public void testExportFlgTrueExis() {
 		InptData inptData = TestData.getExportFlgTrueExisInData();
 		OutptData expectedOutptData = TestData.getExportFlgTrueExisOutData();
