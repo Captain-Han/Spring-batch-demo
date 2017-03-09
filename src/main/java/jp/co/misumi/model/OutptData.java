@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class OutptData {
 
 	/** 作成日 */
-	private Date crtDt;
+	private String crtDt;
 	/** 現法コード */
 	private String suppsubSubsidiaryCd;
 	/** MC・置場コード */
@@ -21,9 +21,9 @@ public class OutptData {
 	/** 直送先コード */
 	private String shipToCd;
 	/** 入荷予定日 */
-	private Date schdArrDt;
+	private String schdArrDt;
 	/** 出荷予定日 */
-	private Date schdShipDt;
+	private String schdShipDt;
 	/** 結合注番 */
 	private String refStr;
 	/** 親注番コード */
@@ -353,7 +353,7 @@ public class OutptData {
 	/** 受注伝票番号 */
 	private String soVoucherNo;
 	/** 受注年月日 */
-	private Date soDate;
+	private String soDate;
 	/** 商品名 */
 	private String productName;
 	/** 単位重量 */
@@ -395,9 +395,9 @@ public class OutptData {
 	/** オリジナルINVOICENO */
 	private String originalInvoiceNo;
 	/** ジャーナル日付 */
-	private Date journalDt;
+	private String journalDt;
 	/** オリジナルInvoiceDate */
-	private Date originalInvoiceDt;
+	private String originalInvoiceDt;
 	/** オリジナルグローバル番号 */
 	private String originalGlobalNo;
 	/** オリジナル受注伝票番号 */
@@ -419,7 +419,7 @@ public class OutptData {
 	/** サプライヤーインボイス番号 */
 	private String supplierInvNo;
 	/** 顧客到着日 */
-	private Date crd;
+	private String crd;
 	/** 所管部門コード */
 	private String deptCd;
 	/** 特別カスタマーBOX番号 */
@@ -525,13 +525,13 @@ public class OutptData {
 	/** 該非区分 */
 	private String ifDiv;
 	/** 配達時間帯 */
-	private Date deliveryTime;
+	private String deliveryTime;
 	/** 送り状№回答区分 */
 	private String sendAnsDiv;
 	/** 着日指示コメント */
 	private String rdInstructComment;
 	/** 配送日 */
-	private Date deliveryDate;
+	private String deliveryDate;
 	/** SCコード名称（漢字） */
 	private String scCodeName;
 	/** 得意先名(カナ) */
@@ -587,9 +587,9 @@ public class OutptData {
 	/** 仕入金額 */
 	private int purcAmt;
 	/** Supplier Invoice Date */
-	private Date supplierInvoiceDate;
+	private String supplierInvoiceDate;
 	/** 発注日 */
-	private Date poDt;
+	private String poDt;
 	/** 税抜き受注金額小計 */
 	private int sumSoAmt;
 	/** インコタームス１ */
@@ -605,7 +605,7 @@ public class OutptData {
 	/** 更新区分 */
 	private String updDiv;
 	/** 作成日_日本用 */
-	private Date crtDtJp;
+	private String crtDtJp;
 	/** MC・置場コード_日本用 */
 	private String mcPlantCdJp;
 	/** 得意先コード_日本用 */
@@ -744,12 +744,12 @@ public class OutptData {
 	}
 
 	/** 作成日 */
-	public Date getCrtDt() {
+	public String getCrtDt() {
 		return crtDt;
 	}
 
 	/** 作成日 */
-	public void setCrtDt(Date crtDt) {
+	public void setCrtDt(String crtDt) {
 		this.crtDt = crtDt;
 	}
 
@@ -814,22 +814,22 @@ public class OutptData {
 	}
 
 	/** 入荷予定日 */
-	public Date getSchdArrDt() {
+	public String getSchdArrDt() {
 		return schdArrDt;
 	}
 
 	/** 入荷予定日 */
-	public void setSchdArrDt(Date schdArrDt) {
+	public void setSchdArrDt(String schdArrDt) {
 		this.schdArrDt = schdArrDt;
 	}
 
 	/** 出荷予定日 */
-	public Date getSchdShipDt() {
+	public String getSchdShipDt() {
 		return schdShipDt;
 	}
 
 	/** 出荷予定日 */
-	public void setSchdShipDt(Date schdShipDt) {
+	public void setSchdShipDt(String schdShipDt) {
 		this.schdShipDt = schdShipDt;
 	}
 
@@ -2474,12 +2474,12 @@ public class OutptData {
 	}
 
 	/** 受注年月日 */
-	public Date getSoDate() {
+	public String getSoDate() {
 		return soDate;
 	}
 
 	/** 受注年月日 */
-	public void setSoDate(Date soDate) {
+	public void setSoDate(String soDate) {
 		this.soDate = soDate;
 	}
 
@@ -2684,22 +2684,22 @@ public class OutptData {
 	}
 
 	/** ジャーナル日付 */
-	public Date getJournalDt() {
+	public String getJournalDt() {
 		return journalDt;
 	}
 
 	/** ジャーナル日付 */
-	public void setJournalDt(Date journalDt) {
+	public void setJournalDt(String journalDt) {
 		this.journalDt = journalDt;
 	}
 
 	/** オリジナルInvoiceDate */
-	public Date getOriginalInvoiceDt() {
+	public String getOriginalInvoiceDt() {
 		return originalInvoiceDt;
 	}
 
 	/** オリジナルInvoiceDate */
-	public void setOriginalInvoiceDt(Date originalInvoiceDt) {
+	public void setOriginalInvoiceDt(String originalInvoiceDt) {
 		this.originalInvoiceDt = originalInvoiceDt;
 	}
 
@@ -2804,12 +2804,12 @@ public class OutptData {
 	}
 
 	/** 顧客到着日 */
-	public Date getCrd() {
+	public String getCrd() {
 		return crd;
 	}
 
 	/** 顧客到着日 */
-	public void setCrd(Date crd) {
+	public void setCrd(String crd) {
 		this.crd = crd;
 	}
 
@@ -3334,12 +3334,12 @@ public class OutptData {
 	}
 
 	/** 配達時間帯 */
-	public Date getDeliveryTime() {
+	public String getDeliveryTime() {
 		return deliveryTime;
 	}
 
 	/** 配達時間帯 */
-	public void setDeliveryTime(Date deliveryTime) {
+	public void setDeliveryTime(String deliveryTime) {
 		this.deliveryTime = deliveryTime;
 	}
 
@@ -3364,12 +3364,12 @@ public class OutptData {
 	}
 
 	/** 配送日 */
-	public Date getDeliveryDate() {
+	public String getDeliveryDate() {
 		return deliveryDate;
 	}
 
 	/** 配送日 */
-	public void setDeliveryDate(Date deliveryDate) {
+	public void setDeliveryDate(String deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
 
@@ -3644,22 +3644,22 @@ public class OutptData {
 	}
 
 	/** Supplier Invoice Date */
-	public Date getSupplierInvoiceDate() {
+	public String getSupplierInvoiceDate() {
 		return supplierInvoiceDate;
 	}
 
 	/** Supplier Invoice Date */
-	public void setSupplierInvoiceDate(Date supplierInvoiceDate) {
+	public void setSupplierInvoiceDate(String supplierInvoiceDate) {
 		this.supplierInvoiceDate = supplierInvoiceDate;
 	}
 
 	/** 発注日 */
-	public Date getPoDt() {
+	public String getPoDt() {
 		return poDt;
 	}
 
 	/** 発注日 */
-	public void setPoDt(Date poDt) {
+	public void setPoDt(String poDt) {
 		this.poDt = poDt;
 	}
 
@@ -3734,12 +3734,12 @@ public class OutptData {
 	}
 
 	/** 作成日_日本用 */
-	public Date getCrtDtJp() {
+	public String getCrtDtJp() {
 		return crtDtJp;
 	}
 
 	/** 作成日_日本用 */
-	public void setCrtDtJp(Date crtDtJp) {
+	public void setCrtDtJp(String crtDtJp) {
 		this.crtDtJp = crtDtJp;
 	}
 
