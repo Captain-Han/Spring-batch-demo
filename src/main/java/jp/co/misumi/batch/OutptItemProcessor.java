@@ -202,16 +202,6 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		result.setSubsidiaryLicenceNo(item.getSubsidiaryLicenceNo());
 		// 現法税登録番号
 		result.setSubsidiaryVatRegistrationNumber(item.getSubsidiaryVatRegistrationNumber());
-		// 現法中央売上税番号
-		result.setSubsidiarySaleTaxNo(BLANK);
-		// 現法物品税管理コード
-		result.setSubsidiaryGoodsTaxMangeCd(BLANK);
-		// 現法物品税管理地
-		result.setSubsidiaryGoodsTaxMangeCity(BLANK);
-		// 現法部署名
-		result.setSubsidiaryDeptName(BLANK);
-		// 現法Commissionerate
-		result.setSubsidiaryCommissionerate(BLANK);
 		// エコール得意先コード
 		result.setEcalCustCd(item.getEcalCustCd());
 		// 得意先名称（現地語）
@@ -506,78 +496,6 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		result.setCarrierAcctNo(item.getCarrierAcctNo());
 		// サービス停止区分
 		result.setServiceStopDiv(item.getServiceStopDiv());
-		// INVOICE注釈３
-		result.setInvoiceRemarks_3(BLANK);
-		// INVOICE注釈１
-		result.setInvoiceRemarks_1(BLANK);
-		// INVOICE注釈２
-		result.setInvoiceRemarks_2(BLANK);
-		// 物品税管理地
-		result.setGoodsTaxMangeCity(BLANK);
-		// 部署名
-		result.setDeptName(BLANK);
-		// Commissionerate
-		result.setCommissionerate(BLANK);
-		// 輸入申告書番号
-		result.setImportNo(BLANK);
-		// 入荷番号
-		result.setArrNo(BLANK);
-		// 出荷番号
-		result.setShipNo(BLANK);
-		// 売金額（相殺関税抜き）
-		result.setAmt(0);
-		// 相殺関税額
-		result.setSetoffAmt(0);
-		// 教育目的税額
-		result.setEduTaxAmt(0);
-		// 第２教育目的税額
-		result.setEdu2TaxAmt(0);
-		// 特別追加関税額
-		result.setSAddTaxAmt(0);
-		// 売金額（相殺関税込み）
-		result.setInTaxAmt(0);
-		// 売金額（相殺関税抜き）合計
-		result.setSumAmt(0);
-		// 相殺関税額合計
-		result.setSumSetoffAmt(0);
-		// "CENVAT Amt.合計
-		result.setCentvatAmt(0);
-		// 教育目的税額合計
-		result.setSumEduTaxAmt(0);
-		// 第2教育目的税額合計
-		result.setSumEdu2TaxAmt(0);
-		// 特別追加関税額合計
-		result.setSumSAddTaxAmt(0);
-		// 売金額（相殺関税込み）合計
-		result.setSumInTaxAmt(0);
-		// 重量合計
-		result.setSumWeight(0);
-		// 売金額合計（割引後）
-		result.setSumActAmt(0);
-		// 輸入関税評価額総計
-		result.setTotalImportTaxAmt(0);
-		// 相殺関税額総計
-		result.setTotalSetoffTaxAmt(0);
-		// 教育目的税額総計
-		result.setTotalEduTaxAmt(0);
-		// 第2教育目的税額総計
-		result.setTotalEdu2TaxAmt(0);
-		// 特別追加関税額総計
-		result.setTotalSAddTaxAmt(0);
-		// 数量合計
-		//TODO result.setSumQty(0);
-		// 相殺関税額合計
-		result.setSumSetoffAmt(0);
-		// 教育目的税額合計
-		result.setSumEduTaxAmt(0);
-		// 第2教育目的税額合計
-		result.setSumEdu2TaxAmt(0);
-		// 特別追加関税額合計
-		result.setSumSAddTaxAmt(0);
-		// 中央付加価値税額合計
-		result.setSumCAddTaxAmt(0);
-		// 所在地
-		result.setLocalCity(BLANK);
 		// 内税外税区分
 		result.setTaxInExDiv(item.getTaxInExDiv());
 		// 指定ＶＳＤ
