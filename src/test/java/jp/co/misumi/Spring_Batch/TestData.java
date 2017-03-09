@@ -693,16 +693,16 @@ public class TestData {
 		outptData.setCtaxRate(FIXED_VALUE);
 		// 日付 todo
 		// ブランク
-		outptData.setBoxNo("                    ");
+		outptData.setBoxNo(BLANK);
 		outptData.setSubsidiarySaleTaxNo(BLANK);
 		outptData.setSubsidiaryGoodsTaxMangeCd(BLANK);
 		outptData.setSubsidiaryGoodsTaxMangeCity(BLANK);
 		outptData.setSubsidiaryDeptName(BLANK);
 		outptData.setSubsidiaryCommissionerate(BLANK);
-		outptData.setOriginalInvoiceNo("            ");
-		outptData.setOriginalGlobalNo("              ");
-		outptData.setOriginalSoVoucherNo("            ");
-		outptData.setReasonCd("    ");
+		outptData.setOriginalInvoiceNo(BLANK);
+		outptData.setOriginalGlobalNo(BLANK);
+		outptData.setOriginalSoVoucherNo(BLANK);
+		outptData.setReasonCd(BLANK);
 		outptData.setReasonContent(BLANK);
 		outptData.setInvoiceRemarks_3(BLANK);
 		outptData.setInvoiceRemarks_1(BLANK);
@@ -711,10 +711,10 @@ public class TestData {
 		outptData.setDeptName(BLANK);
 		outptData.setCommissionerate(BLANK);
 		outptData.setImportNo(BLANK);
-		outptData.setArrNo("           ");
-		outptData.setShipNo("                       ");
+		outptData.setArrNo(BLANK);
+		outptData.setShipNo(BLANK);
 		outptData.setLocalCity(BLANK);
-//		outptData.setDeliveryTime(BLANK);
+		outptData.setDeliveryTime(BLANK);
 		outptData.setSendAnsDiv(BLANK);
 		outptData.setRdInstructComment(BLANK);
 		outptData.setOtherDeliDiv(BLANK);
@@ -800,7 +800,7 @@ public class TestData {
 	public static OutptData getOutptCometSeq() {
 
 		OutptData outptData = new OutptData();
-		outptData.setCometSeq(DATE_DEFAULT + cometSeq);
+		outptData.setCometSeq("20170309" + cometSeq);
 		return outptData;
 	}
 

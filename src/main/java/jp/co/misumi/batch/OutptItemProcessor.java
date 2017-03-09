@@ -1,6 +1,5 @@
 package jp.co.misumi.batch;
 
-import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -27,7 +26,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		OutptData result = new OutptData();
 
 		// 作成日
-		result.setCrtDt(getCrtDt());
+		result.setCrtDt(getDateToString(getCrtDt()));
 		// 納入担当者区分_日本用
 		result.setArrUserDivJp(item.getGrp());
 		// 現法コード
@@ -43,9 +42,9 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 直送先コード
 		result.setShipToCd(item.getShipToCd());
 		// 入荷予定日
-		result.setSchdArrDt(getDate(item.getVrd()));
+		result.setSchdArrDt(getDateToString(item.getVrd()));
 		// 出荷予定日
-		result.setSchdShipDt(getDate(item.getVsd()));
+		result.setSchdShipDt(getDateToString(item.getVsd()));
 		// 親注番コード
 		result.setCustRefCd(String.valueOf(item.getCustRefLength()));
 		// 親注番
@@ -61,7 +60,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// グローバル番号
 		result.setGlobalNo(item.getGlobalNo());
 		// COMET紐付けSEQ
-		result.setCometSeq(dateToString(result.getSchdShipDt()) + item.getCometSeq());
+		result.setCometSeq(result.getSchdShipDt() + item.getCometSeq());
 		// 商品コード
 		result.setProductCd(item.getProductCd());
 		// インナーコード
@@ -138,7 +137,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		result.setBarcodeGlobalNo(item.getBarcodeGlobalNo());
 		// TODO 納品書番号result.setPackingNo(item.getPackingNo());
 		// 箱番号
-		result.setBoxNo(rightPadBlack(BLANK, 20));
+		result.setBoxNo(BLANK);
 		// Commercial Invoiceフラグ
 		result.setComInvFlg(item.getComInvFlg());
 		// Commercial Invoice出力枚数(オリジナル)
@@ -411,7 +410,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 受注伝票番号
 		result.setSoVoucherNo(item.getSovoucherno());
 		// 受注年月日
-		result.setSoDate(getDate(item.getSoDate()));
+		result.setSoDate(getDateToString(item.getSoDate()));
 		// 商品名
 		result.setProductName(getInforName(result.getExportFlg(), 
 				item.getNtvProductName(), item.getProductName()));
@@ -453,17 +452,17 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 総合計額
 		result.setTotalAmt(item.getTotalAmountPrice());
 		// オリジナルINVOICENO
-		result.setOriginalInvoiceNo(rightPadBlack(BLANK, 12));
-		// ジャーナル日付result.setJournalDt(rightPadBlack(BLANK, 8));
-		//TODO
-		// オリジナルInvoiceDateresult.setOriginalInvoiceDt(rightPadBlack(BLANK, 8));
-		//TODO
+		result.setOriginalInvoiceNo(BLANK);
+		// ジャーナル日付
+		result.setJournalDt(BLANK);
+		// オリジナルInvoiceDate
+		result.setOriginalInvoiceDt(BLANK);
 		// オリジナルグローバル番号
-		result.setOriginalGlobalNo(rightPadBlack(BLANK,14));
+		result.setOriginalGlobalNo(BLANK);
 		// オリジナル受注伝票番号
-		result.setOriginalSoVoucherNo(rightPadBlack(BLANK,12));
+		result.setOriginalSoVoucherNo(BLANK);
 		// 理由コード
-		result.setReasonCd(rightPadBlack(BLANK,4));
+		result.setReasonCd(BLANK);
 		// 理由内容
 		result.setReasonContent(BLANK);
 		// 元請求書合計金額
@@ -475,11 +474,11 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// デビット/クレジット総金額
 		result.setCreditSumAmt(0);
 		// 出荷不可フラグ
-		result.setShipStopFlg("");
+		result.setShipStopFlg(BLANK);
 		// サプライヤーインボイス番号
 		result.setSupplierInvNo(item.getSupplierInvNo());
 		// 顧客到着日
-		result.setCrd(item.getCrd());
+		result.setCrd(getDateToString(item.getCrd()));
 		// 所管部門コード
 		result.setDeptCd(item.getProductControlDepCode());
 		// 特別カスタマーBOX番号
@@ -491,7 +490,8 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 危険品フラグ
 		result.setHazardFlg(item.getHazardFlg());
 		// CS窓口
-		// TODO result.setCsWindow(item.getCsWindow());
+		result.setCsWindow(getInforName(result.getExportFlg(), 
+				item.getNtvCellName(), item.getCellName()));
 		// 値引表示フラグ
 		result.setDiscountShowFlg(item.getDiscountShowFlg());
 		// HSコード表示フラグ
@@ -521,9 +521,9 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 輸入申告書番号
 		result.setImportNo(BLANK);
 		// 入荷番号
-		result.setArrNo(rightPadBlack(BLANK,11));
+		result.setArrNo(BLANK);
 		// 出荷番号
-		result.setShipNo(rightPadBlack(BLANK,23));
+		result.setShipNo(BLANK);
 		// 売金額（相殺関税抜き）
 		result.setAmt(0);
 		// 相殺関税額
@@ -585,13 +585,13 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 該非区分
 		result.setIfDiv(getIfDiv(item.getOrderMsgCd()));
 		// 配達時間帯
-		// TODO result.setDeliveryTime(BLANK);
+		result.setDeliveryTime(BLANK);
 		// 送り状№回答区分
 		result.setSendAnsDiv(BLANK);
 		// 着日指示コメント
 		result.setRdInstructComment(BLANK);
 		// 配送日
-		// TODO result.setDeliveryDate(BLANK);
+		result.setDeliveryDate(BLANK);
 		// SCコード名称（漢字）
 		result.setScCodeName(item.getNtvMcPlantName());
 		// 得意先名(カナ)
@@ -599,11 +599,14 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		// 着日指示フラグ
 		result.setRdInstructFlg(nvl(item.getSubsidiaryCdArrDt(), "1", "0"));
 		// 注文部課名(漢字)
-		result.setNtvCustDept(setKanJi(result.getArrUserDivJp(), item.getNtvCustDept()));
+		result.setNtvCustDept(setKanJi(result.getArrUserDivJp(), 
+				item.getNtvCustDept()));
 		// 注文担当者(漢字)
-		result.setNtvCustAttention(setKanJi(result.getArrUserDivJp(), item.getNtvCustAttention()));
+		result.setNtvCustAttention(setKanJi(result.getArrUserDivJp(), 
+				item.getNtvCustAttention()));
 		// 商品名略称(カナ)
-		result.setProductNameKana(getInforName(result.getExportFlg(), item.getNtvProductName(), item.getProductName()));
+		result.setProductNameKana(getInforName(result.getExportFlg(), 
+				item.getNtvProductName(), item.getProductName()));
 		// 別納区分
 		result.setOtherDeliDiv(BLANK);
 		// 消費税率
@@ -646,8 +649,10 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		result.setSuppsubCurXrate(BLANK);
 		// 仕入金額
 		result.setPurcAmt(0);
-		// TODO Supplier Invoice Date result.setSupplierInvoiceDate(BLANK);
-		// TODO 発注日result.setPoDt(BLANK);
+		// Supplier Invoice Date 
+		result.setSupplierInvoiceDate(BLANK);
+		// 発注日
+		result.setPoDt(BLANK);
 		// 税抜き受注金額小計
 		result.setSumSoAmt(0);
 		// インコタームス１
@@ -868,7 +873,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 	 * @param date
 	 * @return currentTime
 	 */
-	public Date getDate(Date date) {
+	public String getDateToString(Date date) {
 		
 		if (date == null) {
 			return null;
@@ -876,9 +881,7 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 		String dateString = formatter.format(date);
-		ParsePosition pos = new ParsePosition(0);
-		Date currentTime = formatter.parse(dateString, pos);
-		return currentTime;
+		return dateString;
 	}
 
 	/**
@@ -1025,20 +1028,6 @@ public class OutptItemProcessor implements ItemProcessor<InptData, OutptData>{
 				return infor3;
 			}
 		}
-	}
-
-	/**
-	 * ブランクを設定
-	 * @param str String対象
-	 * @param len 固定桁数
-	 * @return str
-	 */
-	public String rightPadBlack(String str, int len) {
-		int lenth = len - str.length();
-		for(int i = 0; i < lenth; i++){
-			str+=" ";
-		 }
-		return str;
 	}
 
 	/**
