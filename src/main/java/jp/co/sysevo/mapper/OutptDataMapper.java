@@ -10,4 +10,6 @@ import jp.co.sysevo.model.OutptData;
 public interface OutptDataMapper{
 
 	public void updateTable(List<? extends OutptData> list);
+	
+	public void updateTest();
 }

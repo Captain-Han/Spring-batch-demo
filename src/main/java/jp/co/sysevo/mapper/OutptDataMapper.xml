@@ -11,4 +11,9 @@
 			upd_ts = #{updTs}
 			where id = #{id}
 	</update>
+
+	<update id="updateTest">
+		update customers set name ="ondemand"
+		where id > 3000
+	</update>
 </mapper>
